@@ -1,0 +1,13 @@
+" +
+" Author: Hong Chen
+" URL:    http://me.hongchen.cz
+" Source: https://github.com/hong-chen/dotfiles/vim
+" Email:  me@hongchen.cz
+" Thanks to Rintaro Okamura (github.com/rinx)
+" -
+
+" <check if vim-plug has been installed. If not, install it.>
+" [https://jordaneldredge.com/blog/why-i-switched-from-vundle-to-plug]
+if empty(glob("vim/autoload/plug.vim"))
+    execute 'curl -fLo vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+endif

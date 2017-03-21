@@ -6,8 +6,8 @@
 " Special thanks to Rintaro Okamura (github.com/rinx)
 " -
 
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " <<<basic settings>>>
-
 " set to non-compatible mode
 if &compatible
     set noncompatible
@@ -16,13 +16,13 @@ endif
 " set encoding
 set encoding=utf-8
 
-" set syntax
+" turn on syntax
 syntax on
 
 " highlight unwanted spaces
 set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 
-" turn on relative line number
+" turn on relative line numbering
 set number relativenumber
 
 " stop line breaking
@@ -31,9 +31,30 @@ set nowrap
 " turn off swapfile
 set noswapfile
 
+" indent settings
+filetype plugin indent on
+set autoindent
+set smartindent
+set breakindent
+
+" tab settings
+set expandtab " turn tab into spaces
+set smarttab
+set tabstop=8
+set shiftwidth=4
+set softtabstop=4 " insert tabs/spaces to simulate tab stops
+
+" search settings
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+" ------------------------------------------------------------------------------
+
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " <<<check if vim-plug has been installed. If not, install it.>>>
 " [https://jordaneldredge.com/blog/why-i-switched-from-vundle-to-plug]
 if empty(glob("~/.vim/autoload/plug.vim"))
     execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 endif
-
+" ------------------------------------------------------------------------------

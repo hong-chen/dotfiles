@@ -57,4 +57,15 @@ set smartcase
 if empty(glob("~/.vim/autoload/plug.vim"))
     execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 endif
+
+call plug#begin('~/.vim/plugged')
+
+" alignment
+Plug 'junegunn/vim-easy-align'
+
+" snippets
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
+call plug#end()
+
 " ------------------------------------------------------------------------------

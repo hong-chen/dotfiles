@@ -85,7 +85,7 @@ Plug 'jiangmiao/auto-pairs'
 " surroundings in pair
 Plug 'tpope/vim-surround'
 
-" easy commenting
+" commenting
 Plug 'scrooloose/nerdcommenter'
 filetype plugin on
 let g:NERDSpaceDelims=1

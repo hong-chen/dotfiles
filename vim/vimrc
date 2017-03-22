@@ -56,6 +56,8 @@ set smartcase
 
 " python highlighting
 let python_highlight_all=1
+
+set cursorline
 " ------------------------------------------------------------------------------
 
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -99,7 +101,7 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-fugitive'
 
 " solarized theme
-Plug 'altercation/vim-colors-solarized',{ 'do': 'mv ~/.vim/plugged/vim-colors-solarized/colors ~/.vim/'  }
+Plug 'altercation/vim-colors-solarized', { 'do': 'mv ~/.vim/plugged/vim-colors-solarized/colors ~/.vim/' }
 set background=dark
 if !empty(glob('~/.vim/colors/solarized.vim'))
     if !exists(":colorscheme solarized")

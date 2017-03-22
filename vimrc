@@ -54,9 +54,6 @@ set incsearch
 set ignorecase
 set smartcase
 
-" python highlighting
-let python_highlight_all=1
-
 set cursorline
 " ------------------------------------------------------------------------------
 
@@ -99,6 +96,11 @@ Plug 'jistr/vim-nerdtree-tabs'
 
 " git integration
 Plug 'tpope/vim-fugitive'
+
+" syntax checking
+Plug 'scrooloose/syntastic'
+Plug 'nvie/vim-flake8'
+let python_highlight_all=1
 
 " solarized theme
 Plug 'altercation/vim-colors-solarized', { 'do': 'mv ~/.vim/plugged/vim-colors-solarized/colors ~/.vim/' }

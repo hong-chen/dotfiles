@@ -49,6 +49,8 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+
+set textwidth=79
 " ------------------------------------------------------------------------------
 
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -59,13 +61,35 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 
 call plug#begin('~/.vim/plugged')
-
 " alignment
 Plug 'junegunn/vim-easy-align'
 
 " snippets
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
-call plug#end()
+" python fold
+Plug 'tmhedberg/simpylfold'
+let g:SimpylFold_docstring_preview=1
 
+" auto pairing
+Plug 'jiangmiao/auto-pairs'
+
+" easy commenting
+Plug 'scrooloose/nerdcommenter'
+filetype plugin on
+let g:NERDSpaceDelims=0
+let g:NERDDefaultAlign='left'
+let g:NERDTrimTrailingWhitespace=1
+
+" powerline
+Plug 'vim-airline/vim-airline'
+"let g:airline#extensions#tabline#enabled = 1
+set laststatus=2
+
+" solarized theme
+Plug 'altercation/vim-colors-solarized',{ 'do': 'mv ~/.vim/plugged/vim-colors-solarized/colors ~/.vim/'  }
+set background=dark
+colorscheme solarized
+
+call plug#end()
 " ------------------------------------------------------------------------------

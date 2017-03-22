@@ -74,7 +74,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " python fold
-Plug 'tmhedberg/simpylfold'
+Plug 'tmhedberg/simpylfold', { 'for': 'python' }
 let g:SimpylFold_docstring_preview=1
 
 " auto pairing

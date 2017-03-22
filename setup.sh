@@ -1,1 +1,1 @@
-ln -sf $PWD/vim/vimrc ~/.vimrc
+ln -sf $PWD/vimrc ~/.vimrc

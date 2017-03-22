@@ -74,6 +74,9 @@ let g:SimpylFold_docstring_preview=1
 " auto pairing
 Plug 'jiangmiao/auto-pairs'
 
+" surroundings in pair
+Plug 'tpope/vim-surround'
+
 " easy commenting
 Plug 'scrooloose/nerdcommenter'
 filetype plugin on
@@ -81,15 +84,15 @@ let g:NERDSpaceDelims=0
 let g:NERDDefaultAlign='left'
 let g:NERDTrimTrailingWhitespace=1
 
-" powerline
-Plug 'vim-airline/vim-airline'
-"let g:airline#extensions#tabline#enabled = 1
-set laststatus=2
-
 " solarized theme
 Plug 'altercation/vim-colors-solarized',{ 'do': 'mv ~/.vim/plugged/vim-colors-solarized/colors ~/.vim/'  }
 set background=dark
 colorscheme solarized
 
+" status bar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_powerline_fonts = 1
+set laststatus=2
 call plug#end()
 " ------------------------------------------------------------------------------

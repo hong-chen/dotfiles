@@ -1,6 +1,5 @@
 # added by Hong Chen
 snippet ib "import basic libraries" b
-# basic built-in libraries
 import os
 import sys
 import glob
@@ -10,7 +9,6 @@ $0
 endsnippet
 
 snippet ic "import sci-calc libraries" b
-# scientific calculation libraries
 import h5py
 import numpy as np
 from scipy import interpolate
@@ -19,7 +17,6 @@ $0
 endsnippet
 
 snippet ip "import sci-calc libraries" b
-# plotting libraries
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FixedLocator
@@ -31,9 +28,7 @@ snippet fig "create figure" b
 # figure settings
 fig = plt.figure(figsize=(${1:8}, ${2:6}))
 ax1 = fig.add_subplot(111)
-
 $0
-
 # plt.legend(loc='best', fontsize=12, framealpha=0.4)
 plt.savefig('${6:test}.png')
 plt.show()
@@ -42,15 +37,14 @@ endsnippet
 snippet map "plot map" b
 # map settings
 m = Basemap(projection = '${1:cyl}',
-            llcrnrlat  = ${2:-90},
-            urcrnrlat  = ${3: 90},
-            llcrnrlon  = ${4:-180},
-            urcrnrlon  = ${5: 180},
-            resolution='c')
+			llcrnrlat  = ${2:-90},
+			urcrnrlat  = ${3: 90},
+			llcrnrlon  = ${4:-180},
+			urcrnrlon  = ${5: 180},
+			resolution='c')
 m.drawcoastlines()
 m.drawparallels(${6:np.arange(-90, 91, 30)})
 m.drawmeridians(${7:np.arange(-180, 181, 60)})
-
 x, y = m(${8:lon}, ${9:lat})
 $0
 endsnippet

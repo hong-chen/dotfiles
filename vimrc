@@ -99,8 +99,8 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-fugitive'
 
 " syntax checking
-Plug 'scrooloose/syntastic'
-Plug 'nvie/vim-flake8'
+Plug 'scrooloose/syntastic', { 'for': 'python' }
+Plug 'nvie/vim-flake8', { 'for': 'python' }
 let python_highlight_all=1
 
 " solarized theme

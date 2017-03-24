@@ -19,3 +19,14 @@ alias vi="vim"
 
 alias bbash="vim ~/.bashrc"
 alias bashh="source ~/.bashrc"
+
+# prompt settings
+bldred='\e[1;31m'
+txtrst='\e[0m'
+
+print_before_the_prompt () {
+    printf '%0.s~' $(seq 1 $COLUMNS)
+    printf "\n$bldred%s$txtrst at $bldred%s$txtrst in $bldred%s/$txtrst\n$txtrst" "$USER" "$HOSTNAME" "$PWD"
+}
+PROMPT_COMMAND=print_before_the_prompt
+PS1="->"

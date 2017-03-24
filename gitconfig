@@ -1,0 +1,10 @@
+[user]
+    email = me@hongchen.cz
+    name = hong-chen
+[core]
+    editor = vim
+[color]
+    ui = auto
+    interactive = auto
+[github]
+    user = hong-chen

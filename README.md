@@ -2,16 +2,18 @@
 
 ### How to install
 ```bash
-git clone https://github.com/hong-chen/dotfiles.git
-cd dotfiles
-./setup.sh
+$ git clone https://github.com/hong-chen/dotfiles.git
+$ cd dotfiles
+$ ./setup.sh
 ```
 #### Vim setup
-open Vim in a terminal,
+open Vim in a terminal by typing
+
 ```bash
-vim
+$ vim
 ```
-The installation process will automatically start.
+The installation process will automatically start. When finished, simply quit
+Vim by typing `:q`.
 
 -------------------
 

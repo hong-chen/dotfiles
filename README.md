@@ -10,13 +10,13 @@ $ ./setup.sh
 -------------
 
 #### Vim setup
-Open Vim in a terminal and type in
+Open a terminal and type in
 
 ```bash
 $ vim
 ```
 The installation process will automatically start. When finish, simply quit
-Vim by typing in `:q`.
+Vim by typing `:q`.
 
 Notes: [vim-plug](https://github.com/junegunn/vim-plug) is used for plugin management.
 

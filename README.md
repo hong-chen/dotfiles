@@ -10,25 +10,18 @@ $ ./setup.sh
 -------------
 
 #### Vim setup
-open Vim in a terminal by typing
+Open Vim in a terminal and type in
 
 ```bash
 $ vim
 ```
-The installation process will automatically start. When finished, simply quit
-Vim by typing `:q`.
+The installation process will automatically start. When finish, simply quit
+Vim by typing in `:q`.
 
 Notes: [vim-plug](https://github.com/junegunn/vim-plug) is used for plugin management.
 
 ------------------
 
-No additional setup for `bashrc`, `matplotlibrc`, `gitconfig` *etc.*.
+No additional setup is needed for `bashrc`, `matplotlibrc`, `gitconfig` *etc.*.
 
 -------------------
-
-
-#### gitconfig
-
-#### matplotlibrc
-
-#### bashrc

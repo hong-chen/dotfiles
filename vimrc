@@ -40,11 +40,11 @@ if v:version >= 750
 endif
 
 " tab settings
-set expandtab " turn tab into spaces
+set expandtab     " when press [Tab], insert spaces
 set smarttab
-set tabstop=4
+set tabstop=4     " show existing tab with 4 spaces width
 set softtabstop=4 " insert tabs/spaces to simulate tab stops
-set shiftwidth=4
+set shiftwidth=4  " when indenting with [>], use 4 spaces width
 
 set textwidth=79
 
@@ -103,6 +103,9 @@ filetype plugin on
 let g:NERDSpaceDelims=1
 let g:NERDDefaultAlign='left'
 let g:NERDTrimTrailingWhitespace=1
+
+" Emmet
+Plug 'mattn/emmet-vim'
 
 " file browsing
 Plug 'scrooloose/nerdtree'

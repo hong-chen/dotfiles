@@ -46,7 +46,7 @@ set tabstop=4     " show existing tab with 4 spaces width
 set softtabstop=4 " insert tabs/spaces to simulate tab stops
 set shiftwidth=4  " when indenting with [>], use 4 spaces width
 
-set textwidth=79
+" set textwidth=79
 
 " search settings
 set hlsearch

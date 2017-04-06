@@ -116,7 +116,7 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-fugitive'
 
 " syntax checking
-Plug 'scrooloose/syntastic', { 'for': 'python' }
+" Plug 'scrooloose/syntastic', { 'for': 'python' }
 Plug 'nvie/vim-flake8', { 'for': 'python' }
 let python_highlight_all=1
 

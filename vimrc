@@ -125,7 +125,6 @@ Plug 'altercation/vim-colors-solarized', { 'do': 'mv ~/.vim/plugged/vim-colors-s
 set background=dark
 if !empty(glob('~/.vim/colors/solarized.vim'))
     if !exists(":colorscheme solarized")
-        let g:solarized_termcolors=256
         let g:solarized_termtrans=1
         colorscheme solarized
     endif

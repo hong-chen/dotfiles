@@ -86,10 +86,11 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 
 " python fold
-" Plug 'tmhedberg/simpylfold', { 'for': 'python' }
-" let g:SimpylFold_docstring_preview=1
-" let g:SimpylFold_fold_import=0
-" let b:SimpylFold_fold_import=0
+Plug 'Konfekt/FastFold'
+Plug 'tmhedberg/simpylfold', { 'for': 'python' }
+let g:SimpylFold_docstring_preview=1
+let g:SimpylFold_fold_import=0
+let b:SimpylFold_fold_import=0
 
 " auto pairing
 Plug 'jiangmiao/auto-pairs'

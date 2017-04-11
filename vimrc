@@ -22,6 +22,9 @@ syntax on
 " highlight unwanted spaces
 set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 
+" allow vim to delete anything
+set backspace=indent,eol,start
+
 " turn on relative line numbering
 set number relativenumber
 

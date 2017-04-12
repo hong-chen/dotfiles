@@ -104,7 +104,7 @@ Plug 'tpope/vim-surround'
 " commenting
 Plug 'scrooloose/nerdcommenter'
 filetype plugin on
-let g:NERDSpaceDelims=1
+let g:NERDSpaceDelims=0
 let g:NERDDefaultAlign='left'
 let g:NERDTrimTrailingWhitespace=1
 

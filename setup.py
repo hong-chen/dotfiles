@@ -22,6 +22,7 @@ class SETUP(object):
                 os.system('cp %s/matplotlibrc %s' % (fdir_mpl_data, fname_cfg_backup))
             else:
                 os.system('mv %s %s' % (fname_cfg, fname_cfg_backup))
+            exit()
 
             my_rcParams = {
                     'lines.linewidth' : '1.5',

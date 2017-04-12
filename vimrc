@@ -124,6 +124,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'nvie/vim-flake8', { 'for': 'python' }
 let python_highlight_all=1
 
+" remember last edit position
+Plug 'farmergreg/vim-lastplace'
+
 " solarized theme
 Plug 'altercation/vim-colors-solarized', { 'do': 'mv ~/.vim/plugged/vim-colors-solarized/colors ~/.vim/' }
 set background=dark

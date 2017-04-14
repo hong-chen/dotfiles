@@ -11,9 +11,9 @@ class SETUP(object):
     def __init__(self):
 
         if sys.platform == 'darwin':
-            print('Message [SETUP]: Setup is being made for macOS...')
+            print('Message [SETUP]: Setting up environment on macOS...')
         if sys.platform == 'linux':
-            print('Message [SETUP]: Setup is being made for Linux...')
+            print('Message [SETUP]: Setting up environment on Linux...')
 
         exit()
 
@@ -64,6 +64,7 @@ class SETUP(object):
     def MATPLOTLIB(self):
 
         try:
+
             import matplotlib as mpl
             fdir_mpl_data  = mpl.get_data_path()
             fdir_mpl_cfg   = mpl.get_configdir()
@@ -129,6 +130,7 @@ class SETUP(object):
             print(fdir_mpl_data)
 
         except ImportError:
+
             exit('Warning [SETUP.MATPLOTLIB]: matplotlib is not available.')
 
 if __name__ == "__main__":

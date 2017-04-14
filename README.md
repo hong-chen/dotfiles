@@ -22,6 +22,6 @@ Notes: [vim-plug](https://github.com/junegunn/vim-plug) is used for plugin manag
 
 ------------------
 
-No additional setup is needed for `bashrc`, `matplotlibrc`, `gitconfig` and `tmux.conf`.
+No additional setup is needed for `bashrc`, `gitconfig`, `matplotlibrc`, and `tmux.conf`.
 
 -------------------

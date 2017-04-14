@@ -127,6 +127,14 @@ let python_highlight_all=1
 " remember last edit position
 Plug 'farmergreg/vim-lastplace'
 
+" preview markdown file
+Plug 'kannokanno/previm', { 'for': 'markdown' }
+let g:previm_open_cmd = 'open -a "Google Chrome"'
+augroup PrevimSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
+
 " solarized theme
 Plug 'altercation/vim-colors-solarized', { 'do': 'mv ~/.vim/plugged/vim-colors-solarized/colors ~/.vim/' }
 set background=dark

@@ -4,7 +4,7 @@
 ```bash
 $ git clone https://github.com/hong-chen/dotfiles.git
 $ cd dotfiles
-$ ./setup.sh
+$ ./setup.py
 ```
 
 -------------
@@ -13,7 +13,7 @@ $ ./setup.sh
 Open a terminal and type in
 
 ```bash
-$ vim
+vim
 ```
 The installation process will automatically start. When finish, simply quit
 Vim by typing `:q`.
@@ -22,6 +22,6 @@ Notes: [vim-plug](https://github.com/junegunn/vim-plug) is used for plugin manag
 
 ------------------
 
-No additional setup is needed for `bashrc`, `matplotlibrc`, `gitconfig` *etc.*.
+No additional setup is needed for `bashrc`, `matplotlibrc`, `gitconfig` and `tmux.conf`.
 
 -------------------

@@ -59,10 +59,11 @@ set smartcase
 
 " cursorline settings (steal from Rintaro Okamura)
 set updatetime=1500
-set cursorline
 augroup hchen-cursorcolumn
     autocmd!
+    autocmd CursorMoved,CursorMovedI,WinLeave * setlocal nocursorline
     autocmd CursorMoved,CursorMovedI,WinLeave * setlocal nocursorcolumn
+    autocmd CursorHold,CursorHoldI * setlocal cursorline
     autocmd CursorHold,CursorHoldI * setlocal cursorcolumn
 augroup END
 

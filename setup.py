@@ -2,13 +2,64 @@
 # -*- coding: utf-8 -*-
 
 import os
+import sys
+import shutil
 import re
 
 class SETUP(object):
 
     def __init__(self):
 
+        if sys.platform == 'darwin':
+            print('Message [SETUP]: Setup is being made for macOS...')
+        if sys.platform == 'linux':
+            print('Message [SETUP]: Setup is being made for Linux...')
+
+        exit()
+
+        self.VIM()
+        self.GIT()
+        self.TMUX()
         self.MATPLOTLIB()
+
+    def VIM(self):
+
+        if shutil.which('vim'):
+
+            print('Message [SETUP]: Setting up Vim...')
+            os.system('rm -rf ~/.vim*')
+            os.system('ln -sf vimrc ~/.vimrc')
+            os.system('mkdir -p ~/.vim/after/my_snippets')
+            os.system('ln -sf data/my_snippets ~/.vim/after/my_snippets')
+            print('Message [SETUP]: Vim setup is complete.')
+
+        else:
+
+            print('Message [SETUP]: Vim does not exist, aborting setup for Vim...')
+
+    def GIT(self):
+
+        if shutil.which('git'):
+
+            print('Message [SETUP]: Setting up Git...')
+            os.system('ln -sf gitconfig ~/.gitconfig')
+            print('Message [SETUP]: Git setup is complete.')
+
+        else:
+
+            print('Message [SETUP]: Git does not exist, aborting setup for Git...')
+
+    def TMUX(self):
+
+        if shutil.which('git'):
+
+            print('Message [SETUP]: Setting up tmux...')
+            os.system('ln -sf tmux.conf ~/.tmux.conf')
+            print('Message [SETUP]: tmux setup is complete.')
+
+        else:
+
+            print('Message [SETUP]: tmux does not exist, aborting setup for tmux...')
 
     def MATPLOTLIB(self):
 

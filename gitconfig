@@ -1,6 +1,6 @@
 [user]
-    email = me@hongchen.cz
-    name = Hong Chen
+	email = me@hongchen.cz
+	name = Hong Chen
 [core]
     editor = vim
 [color]

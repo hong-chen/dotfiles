@@ -15,8 +15,6 @@ class SETUP(object):
         if sys.platform == 'linux':
             print('Message [SETUP]: Setting up environment on Linux...')
 
-        exit()
-
         self.VIM()
         self.GIT()
         self.TMUX()
@@ -28,9 +26,9 @@ class SETUP(object):
 
             print('Message [SETUP]: Setting up Vim...')
             os.system('rm -rf ~/.vim*')
-            os.system('ln -sf vimrc ~/.vimrc')
-            os.system('mkdir -p ~/.vim/after/my_snippets')
-            os.system('ln -sf data/my_snippets ~/.vim/after/my_snippets')
+            os.system('ln -sf %s/vimrc ~/.vimrc' % os.getcwd())
+            os.system('mkdir -p ~/.vim/after')
+            os.system('ln -sf %s/data/my_snippets ~/.vim/after/my_snippets' % os.getcwd())
             print('Message [SETUP]: Vim setup is complete.')
 
         else:
@@ -42,7 +40,7 @@ class SETUP(object):
         if shutil.which('git'):
 
             print('Message [SETUP]: Setting up Git...')
-            os.system('ln -sf gitconfig ~/.gitconfig')
+            os.system('ln -sf %s/gitconfig ~/.gitconfig' % os.getcwd())
             print('Message [SETUP]: Git setup is complete.')
 
         else:
@@ -54,7 +52,7 @@ class SETUP(object):
         if shutil.which('git'):
 
             print('Message [SETUP]: Setting up tmux...')
-            os.system('ln -sf tmux.conf ~/.tmux.conf')
+            os.system('ln -sf %s/tmux.conf ~/.tmux.conf' % os.getcwd())
             print('Message [SETUP]: tmux setup is complete.')
 
         else:

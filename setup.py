@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import os
@@ -30,7 +30,7 @@ class SETUP(object):
             os.system('rm -rf ~/.vim*')
             os.system('ln -sf %s/vimrc ~/.vimrc' % self.fdir_cur)
             os.system('mkdir -p ~/.vim/after')
-            os.system('ln -sf %s/data/my_snippets ~/.vim/after/my_snippets' % os.getcwd())
+            os.system('ln -sf %s/data/my_snippets ~/.vim/after/my_snippets' % self.fdir_cur)
             print('Message [SETUP]: Vim setup is complete.')
 
         else:

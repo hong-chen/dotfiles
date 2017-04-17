@@ -15,19 +15,12 @@ class SETUP(object):
         if sys.platform == 'linux':
             print('Message [SETUP]: Setting up environment on Linux...')
 
-<<<<<<< HEAD
-        # self.VIM()
-        # self.GIT()
-        # self.TMUX()
-        # self.MATPLOTLIB()
-=======
         self.fdir_cur = os.getcwd()
 
         self.VIM()
         self.GIT()
         self.TMUX()
         self.MATPLOTLIB()
->>>>>>> 8677d66adb1ec805827ff89295c6572dceeca852
 
     def VIM(self):
 

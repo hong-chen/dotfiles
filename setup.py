@@ -15,12 +15,10 @@ class SETUP(object):
         if sys.platform == 'linux':
             print('Message [SETUP]: Setting up environment on Linux...')
 
-        exit()
-
-        self.VIM()
-        self.GIT()
-        self.TMUX()
-        self.MATPLOTLIB()
+        # self.VIM()
+        # self.GIT()
+        # self.TMUX()
+        # self.MATPLOTLIB()
 
     def VIM(self):
 
@@ -51,7 +49,7 @@ class SETUP(object):
 
     def TMUX(self):
 
-        if shutil.which('git'):
+        if shutil.which('tmux'):
 
             print('Message [SETUP]: Setting up tmux...')
             os.system('ln -sf tmux.conf ~/.tmux.conf')
@@ -136,3 +134,4 @@ class SETUP(object):
 if __name__ == "__main__":
 
     init = SETUP()
+    exit()

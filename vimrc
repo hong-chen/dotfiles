@@ -136,6 +136,9 @@ augroup PrevimSettings
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 
+" grammer check
+Plug 'rhysd/vim-grammarous', { 'for': 'markdown' }
+
 " solarized theme
 Plug 'altercation/vim-colors-solarized', { 'do': 'mv ~/.vim/plugged/vim-colors-solarized/colors ~/.vim/' }
 set background=dark

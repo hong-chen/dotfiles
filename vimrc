@@ -67,6 +67,12 @@ augroup hchen-cursorcolumn
     autocmd CursorHold,CursorHoldI * setlocal cursorcolumn
 augroup END
 
+augroup hchen-filetypes
+    autocmd BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
+    autocmd BufNewFile,BufRead *.{F90,f90,f77,nml} setf fortran
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} setf markdown
+augroup END
+
 " ------------------------------------------------------------------------------
 
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -131,13 +137,6 @@ Plug 'farmergreg/vim-lastplace'
 " preview markdown file
 Plug 'kannokanno/previm', { 'for': 'markdown' }
 let g:previm_open_cmd = 'open -a "Google Chrome"'
-augroup PrevimSettings
-    autocmd!
-    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-augroup END
-
-" fortran
-Plug 'vim-scripts/fortran.vim', { 'for': 'fortran' }
 
 " grammer check
 Plug 'rhysd/vim-grammarous', { 'for': 'markdown' }

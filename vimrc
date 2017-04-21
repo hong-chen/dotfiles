@@ -136,6 +136,9 @@ augroup PrevimSettings
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 
+" fortran
+Plug 'vim-scripts/fortran.vim', { 'for': 'fortran' }
+
 " grammer check
 Plug 'rhysd/vim-grammarous', { 'for': 'markdown' }
 

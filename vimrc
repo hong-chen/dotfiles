@@ -158,6 +158,3 @@ let g:airline_powerline_fonts = 1
 set laststatus=2
 call plug#end()
 " ------------------------------------------------------------------------------
-"
-"highlight CursorLine ctermbg=white
-"highlight CursorColumn ctermbg=white

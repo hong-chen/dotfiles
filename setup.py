@@ -127,7 +127,7 @@ class SETUP(object):
 
             f_backup.close()
 
-            #  os.system('rm -rf %s' % fdir_mpl_cache)
+            os.system('rm -rf %s' % fdir_mpl_cache)
 
             print(fdir_mpl_data)
 

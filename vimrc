@@ -141,6 +141,17 @@ let g:previm_open_cmd = 'open -a "Google Chrome"'
 " grammer check
 Plug 'rhysd/vim-grammarous', { 'for': 'markdown' }
 
+" html emmet
+Plug 'mattn/emmet-vim'
+
+" html html5
+Plug 'othree/html5.vim'
+
+" easy-align
+Plug 'junegunn/vim-easy-align'
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
 " solarized theme
 Plug 'altercation/vim-colors-solarized', { 'do': 'mv ~/.vim/plugged/vim-colors-solarized/colors ~/.vim/' }
 set background=dark

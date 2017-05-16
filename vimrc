@@ -138,6 +138,9 @@ Plug 'farmergreg/vim-lastplace'
 Plug 'kannokanno/previm', { 'for': 'markdown' }
 let g:previm_open_cmd = 'open -a "Google Chrome"'
 
+" preview html file
+Plug 'greyblake/vim-preview', { 'for': 'html' }
+
 " grammer check
 Plug 'rhysd/vim-grammarous', { 'for': 'markdown' }
 

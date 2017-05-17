@@ -57,6 +57,8 @@ set incsearch
 set ignorecase
 set smartcase
 
+set virtualedit=all
+
 " cursorline settings (steal from Rintaro Okamura)
 set updatetime=1500
 augroup hchen-cursorcolumn

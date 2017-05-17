@@ -57,8 +57,6 @@ set incsearch
 set ignorecase
 set smartcase
 
-nnoremap <F11>c :exe ':silent !open -a /Applications/Google\ Chrome.app %'<CR>
-
 " cursorline settings (steal from Rintaro Okamura)
 set updatetime=1500
 augroup hchen-cursorcolumn

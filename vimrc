@@ -73,6 +73,9 @@ augroup hchen-filetypes
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} setf markdown
 augroup END
 
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
+autocmd Filetype markdown setlocal ts=2 sw=2 expandtab
+
 " ------------------------------------------------------------------------------
 
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

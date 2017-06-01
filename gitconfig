@@ -10,3 +10,5 @@
     user = hong-chen
 [credential]
     helper = cache --timeout=3600
+[push]
+    default = current

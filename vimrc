@@ -77,7 +77,7 @@ augroup END
 
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 autocmd Filetype markdown setlocal ts=2 sw=2 expandtab
-autocmd Filetype idl setlocal ts=2 sw=2 expandtab
+autocmd Filetype idlang setlocal ts=2 sw=2 expandtab
 
 " ------------------------------------------------------------------------------
 

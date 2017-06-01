@@ -10,12 +10,15 @@ class SETUP(object):
 
     def __init__(self):
 
+        print(sys.platform)
         if sys.platform == 'darwin':
             self.system = 'macOS'
             print('Message [SETUP]: Setting up environment on macOS...')
-        if sys.platform == 'linux':
+        if 'linux' in sys.platform:
             self.system = 'linux'
             print('Message [SETUP]: Setting up environment on Linux...')
+
+        exit()
 
         self.fdir_cur = os.getcwd()
 

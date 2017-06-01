@@ -109,7 +109,7 @@ let g:SimpylFold_fold_import=0
 let b:SimpylFold_fold_import=0
 
 " auto pairing
-Plug 'jiangmiao/auto-pairs'
+Plug 'cohama/lexima.vim'
 
 " surroundings in pair
 Plug 'tpope/vim-surround'

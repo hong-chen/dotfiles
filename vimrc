@@ -108,7 +108,7 @@ let g:SimpylFold_docstring_preview=1
 let g:SimpylFold_fold_import=0
 let b:SimpylFold_fold_import=0
 
-" auto pairing
+" auto complete
 Plug 'cohama/lexima.vim'
 
 " surroundings in pair

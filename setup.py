@@ -11,7 +11,7 @@ class SETUP(object):
     def __init__(self):
 
         print(sys.platform)
-        if sys.platform == 'darwin':
+        if 'darwin' in sys.platform:
             self.system = 'macOS'
             print('Message [SETUP]: Setting up environment on macOS...')
         if 'linux' in sys.platform:

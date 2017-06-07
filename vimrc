@@ -188,10 +188,10 @@ nmap ga <Plug>(EasyAlign)
 " solarized theme settings
 set background=dark
 if !empty(glob('~/.vim/colors/solarized.vim'))
-  if !exists(":colorscheme solarized")
-    let g:solarized_termtrans=1
-    colorscheme solarized
-  endif
+    if !exists(":colorscheme solarized")
+        let g:solarized_termtrans=1
+        colorscheme solarized
+    endif
 endif
 
 " lexima settings

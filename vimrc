@@ -96,17 +96,10 @@ Plug 'junegunn/vim-easy-align'
 " snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 
 " python fold
 Plug 'Konfekt/FastFold'
 Plug 'tmhedberg/simpylfold', { 'for': 'python' }
-let g:SimpylFold_docstring_preview=1
-let g:SimpylFold_fold_import=0
-let b:SimpylFold_fold_import=0
 
 " auto complete (can add more rules)
 Plug 'cohama/lexima.vim'
@@ -116,10 +109,6 @@ Plug 'tpope/vim-surround'
 
 " commenting
 Plug 'scrooloose/nerdcommenter'
-filetype plugin on
-let g:NERDSpaceDelims=0
-let g:NERDDefaultAlign='left'
-let g:NERDTrimTrailingWhitespace=1
 
 " Emmet
 Plug 'mattn/emmet-vim'
@@ -127,21 +116,18 @@ Plug 'mattn/emmet-vim'
 " file browsing
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-"let g:nerdtree_tabs_open_on_console_startup=1
 
 " git integration
 Plug 'tpope/vim-fugitive'
 
 " syntax checking
 Plug 'nvie/vim-flake8', { 'for': 'python' }
-let python_highlight_all=1
 
 " remember last edit position
 Plug 'farmergreg/vim-lastplace'
 
 " preview markdown file
 Plug 'kannokanno/previm', { 'for': 'markdown' }
-let g:previm_open_cmd = 'open -a "Google Chrome"'
 
 " preview html file
 Plug 'jaxbot/browserlink.vim', { 'for': 'html' }
@@ -157,23 +143,58 @@ Plug 'othree/html5.vim'
 
 " easy-align
 Plug 'junegunn/vim-easy-align'
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
 
 " solarized theme
 Plug 'altercation/vim-colors-solarized', { 'do': 'mv ~/.vim/plugged/vim-colors-solarized/colors ~/.vim/' }
-set background=dark
-if !empty(glob('~/.vim/colors/solarized.vim'))
-    if !exists(":colorscheme solarized")
-        let g:solarized_termtrans=1
-        colorscheme solarized
-    endif
-endif
 
 " status bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+call plug#end()
+
+"+ Plugin settings
+
+" python fold settings
+let g:SimpylFold_docstring_preview=1
+let g:SimpylFold_fold_import=0
+let b:SimpylFold_fold_import=0
+
+" snippets settings
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
+
+" nerdcommenter settings
+filetype plugin on
+let g:NERDSpaceDelims=0
+let g:NERDDefaultAlign='left'
+let g:NERDTrimTrailingWhitespace=1
+
+" vim-flake8 settings
+let python_highlight_all=1
+
+" previm settings
+let g:previm_open_cmd = 'open -a "Google Chrome"'
+
+" easy-align settings
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
+" solarized theme settings
+set background=dark
+if !empty(glob('~/.vim/colors/solarized.vim'))
+  if !exists(":colorscheme solarized")
+    let g:solarized_termtrans=1
+    colorscheme solarized
+  endif
+endif
+
+" lexima settings (latex)
+call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'latex'})
+
+" vim-airline settings
 let g:airline_powerline_fonts = 1
 set laststatus=2
-call plug#end()
+
 " ------------------------------------------------------------------------------

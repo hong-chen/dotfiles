@@ -59,6 +59,8 @@ set smartcase
 
 set virtualedit=all
 
+filetype plugin on
+
 " cursorline settings (steal from Rintaro Okamura)
 set updatetime=1500
 augroup hchen-cursorcolumn
@@ -78,6 +80,7 @@ augroup END
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 autocmd Filetype markdown setlocal ts=2 sw=2 expandtab
 autocmd Filetype idlang setlocal ts=2 sw=2 expandtab
+autocmd Filetype fortran setlocal ts=3 sw=3 expandtab
 
 " ------------------------------------------------------------------------------
 
@@ -151,8 +154,10 @@ Plug 'altercation/vim-colors-solarized', { 'do': 'mv ~/.vim/plugged/vim-colors-s
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
+" ------------------------------------------------------------------------------
 
-"+ Plugin settings
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+" Plugin settings
 
 " python fold settings
 let g:SimpylFold_docstring_preview=1
@@ -166,7 +171,6 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 
 " nerdcommenter settings
-filetype plugin on
 let g:NERDSpaceDelims=0
 let g:NERDDefaultAlign='left'
 let g:NERDTrimTrailingWhitespace=1
@@ -230,5 +234,4 @@ call lexima#add_rule({'char': '<CR>', 'at': '^\s*-\s.*\%#', 'input': '<CR>- ', '
 " vim-airline settings
 let g:airline_powerline_fonts = 1
 set laststatus=2
-
 " ------------------------------------------------------------------------------

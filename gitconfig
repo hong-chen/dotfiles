@@ -3,6 +3,7 @@
     name = Hong Chen
 [core]
     editor = vim
+    excludesfile = ~/.gitignore
 [color]
     ui = auto
     interactive = auto
@@ -12,3 +13,5 @@
     helper = cache --timeout=3600
 [push]
     default = current
+[mergetool]
+    prompt = false

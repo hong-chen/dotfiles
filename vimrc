@@ -219,6 +219,7 @@ call lexima#add_rule({'char': '<CR>', 'at': '^\s*endif\s*else\s*begin\%#', 'inpu
 call lexima#add_rule({'char': '<CR>', 'at': '^\s*for\s*\>.*do\s*begin\%#', 'input_after': '<CR>endfor', 'filetype': ['idlang']})
 call lexima#add_rule({'char': '<CR>', 'at': '^\s*case\>.*of\%#', 'input_after': '<CR>endcase', 'filetype': ['idlang']})
 call lexima#add_rule({'char': '<CR>', 'at': '^\s*\;\s.*\%#', 'input': '<CR>; ', 'filetype': ['idlang']})
+call lexima#add_rule({'char': '<CR>', 'at': '^\s*pro\s*\%#', 'input_after': '<CR>end', 'filetype': ['idlang']})
 
 " lexima settings (markdown) [steal from Rintaro]
 call lexima#add_rule({'char': '**', 'input_after': '**', 'filetype': ['markdown']})

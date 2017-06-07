@@ -190,8 +190,24 @@ if !empty(glob('~/.vim/colors/solarized.vim'))
   endif
 endif
 
-" lexima settings (latex)
-call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'latex'})
+" lexima settings
+let g:lexima_map_escape = '<Esc>'
+let g:lexima_enable_basic_rules = 1
+let g:lexima_enable_newline_rules = 1
+let g:lexima_enable_space_rules = 1
+let g:lexima_enable_endwise_rules = 1
+
+" lexima settings (Tex) [steal from Rintaro]
+call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': ['tex','latex','plaintex']})
+call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': ['tex','latex','plaintex']})
+call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': ['tex','latex','plaintex']})
+call lexima#add_rule({'char': '<CR>', 'at': '^\s*%\s.*\%#', 'input': '<CR>% ', 'filetype': ['tex','latex','plaintex']})
+
+" lexima settings (Fortran) [steal from Rintaro]
+call lexima#add_rule({'char': '<CR>', 'at': '^\s*if\>.*then\%#', 'input_after': '<CR>end if', 'filetype': ['fortran']})
+call lexima#add_rule({'char': '<CR>', 'at': '^\s*do.*\%#', 'input_after': '<CR>end do', 'filetype': ['fortran']})
+call lexima#add_rule({'char': '<CR>', 'at': '^\s*select\s*case\s*.*\%#', 'input_after': '<CR>end select', 'filetype': ['fortran']})
+call lexima#add_rule({'char': '<CR>', 'at': '^\s*!\s.*\%#', 'input': '<CR>! ', 'filetype': ['fortran']})
 
 " lexima settings (IDL) [steal from Rintaro]
 call lexima#add_rule({'char': '<CR>', 'at': '^\s*if\>.*then\s*begin\%#', 'input_after': '<CR>endif', 'filetype': ['idlang']})
@@ -199,6 +215,17 @@ call lexima#add_rule({'char': '<CR>', 'at': '^\s*endif\s*else\s*begin\%#', 'inpu
 call lexima#add_rule({'char': '<CR>', 'at': '^\s*for\s*\>.*do\s*begin\%#', 'input_after': '<CR>endfor', 'filetype': ['idlang']})
 call lexima#add_rule({'char': '<CR>', 'at': '^\s*case\>.*of\%#', 'input_after': '<CR>endcase', 'filetype': ['idlang']})
 call lexima#add_rule({'char': '<CR>', 'at': '^\s*\;\s.*\%#', 'input': '<CR>; ', 'filetype': ['idlang']})
+
+" lexima settings (markdown) [steal from Rintaro]
+call lexima#add_rule({'char': '**', 'input_after': '**', 'filetype': ['markdown']})
+call lexima#add_rule({'char': '<BS>', 'at': '\*\%#\*', 'delete': 1, 'filetype': ['markdown']})
+call lexima#add_rule({'char': '__', 'input_after': '__', 'filetype': ['markdown']})
+call lexima#add_rule({'char': '<BS>', 'at': '_\%#_', 'delete': 1, 'filetype': ['markdown']})
+call lexima#add_rule({'char': '~~', 'input_after': '~~', 'filetype': ['markdown']})
+call lexima#add_rule({'char': '<BS>', 'at': '\~\%#\~', 'delete': 1, 'filetype': ['markdown']})
+call lexima#add_rule({'char': '<CR>', 'at': '^\s*\*\s.*\%#', 'input': '<CR>* ', 'filetype': ['markdown']})
+call lexima#add_rule({'char': '<CR>', 'at': '^\s*+\s.*\%#', 'input': '<CR>+ ', 'filetype': ['markdown']})
+call lexima#add_rule({'char': '<CR>', 'at': '^\s*-\s.*\%#', 'input': '<CR>- ', 'filetype': ['markdown']})
 
 " vim-airline settings
 let g:airline_powerline_fonts = 1

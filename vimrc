@@ -194,7 +194,7 @@ if !empty(glob('~/.vim/colors/solarized.vim'))
     endif
 endif
 
-" lexima settings
+" lexima settings (to be modified)
 let g:lexima_map_escape = '<Esc>'
 let g:lexima_enable_basic_rules = 1
 let g:lexima_enable_newline_rules = 1

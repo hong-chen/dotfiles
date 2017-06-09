@@ -3,15 +3,15 @@
 ---
 ### Description
 
-- `.vimrc` : vim configuration file
+- `vimrc` : vim configuration file
 
-- `.bashrc` : bash shell configuration file
+- `bashrc` : bash shell configuration file
 
-- `.matplotlibrc`: Python matplotlib configuration file
+- `matplotlibrc`: Python matplotlib configuration file
 
-- `.tmux.conf`: tmux configuration file
+- `tmux.conf`: tmux configuration file
 
-- `.gitconfig`: Git configuration file
+- `gitconfig`: Git configuration file
 
 ---
 ### How to install

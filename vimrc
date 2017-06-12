@@ -73,7 +73,7 @@ augroup END
 
 augroup hchen-filetypes
     autocmd BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
-    autocmd BufNewFile,BufRead *.{F90,f90,f77,nml} setf fortran
+    autocmd BufNewFile,BufRead *.{F90,f90,F77,f77,nml} setf fortran
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} setf markdown
 augroup END
 
@@ -212,6 +212,7 @@ call lexima#add_rule({'char': '<CR>', 'at': '^\s*if\>.*then\%#', 'input_after': 
 call lexima#add_rule({'char': '<CR>', 'at': '^\s*do.*\%#', 'input_after': '<CR>end do', 'filetype': ['fortran']})
 call lexima#add_rule({'char': '<CR>', 'at': '^\s*select\s*case\s*.*\%#', 'input_after': '<CR>end select', 'filetype': ['fortran']})
 call lexima#add_rule({'char': '<CR>', 'at': '^\s*!\s.*\%#', 'input': '<CR>! ', 'filetype': ['fortran']})
+call lexima#add_rule({'char': '<CR>', 'at': '^\s*program\>.*\%#', 'input_after': '<CR>end program', 'filetype': ['fortran']})
 
 " lexima settings (IDL) [steal from Rintaro]
 call lexima#add_rule({'char': '<CR>', 'at': '^\s*if\>.*then\s*begin\%#', 'input_after': '<CR>endif', 'filetype': ['idlang']})

@@ -22,7 +22,7 @@ alias vi="vim"
 alias bbash="vim ~/.bashrc"
 alias bashh="source ~/.bashrc"
 
-# prompt settings
+#+ prompt settings
 print_before_the_prompt () {
     printf "%0.s~" $(seq 1 $COLUMNS)
 }
@@ -30,6 +30,7 @@ PROMPT_COMMAND=print_before_the_prompt
 if [ -f "$PATH_DOTFILES/extra/bash-git-prompt/gitprompt.sh" ]; then
     GIT_PROMPT_START="\e[0;32m\u\e[0m at \e[0;31m$(scutil --get ComputerName)\e[0m in \e[0;34m\$PWD/\e[0m"
     GIT_PROMPT_END="\n->"
-    __GIT_PROMPT_DIR="$PATH_DOTFILES/opt/bash-git-prompt"
+    __GIT_PROMPT_DIR="$PATH_DOTFILES/extra/bash-git-prompt"
     source "$PATH_DOTFILES/extra/bash-git-prompt/gitprompt.sh"
 fi
+#-

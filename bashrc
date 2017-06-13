@@ -1,3 +1,5 @@
+export PATH_DOTFILES="/Users/hoch4240/Chen/mygit/dotfiles"
+
 # alias
 alias bb="cd .."
 
@@ -21,12 +23,13 @@ alias bbash="vim ~/.bashrc"
 alias bashh="source ~/.bashrc"
 
 # prompt settings
-bldred='\e[1;31m'
-txtrst='\e[0m'
-
 print_before_the_prompt () {
-    printf '%0.s~' $(seq 1 $COLUMNS)
-    printf "\n$bldred%s$txtrst at $bldred%s$txtrst in $bldred%s/$txtrst\n$txtrst" "$USER" "$HOSTNAME" "$PWD"
+    printf "%0.s~" $(seq 1 $COLUMNS)
 }
 PROMPT_COMMAND=print_before_the_prompt
-PS1="->"
+if [ -f "$PATH_DOTFILES/extra/bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_START="\e[0;32m\u\e[0m at \e[0;31m$(scutil --get ComputerName)\e[0m in \e[0;34m\$PWD/\e[0m"
+    GIT_PROMPT_END="\n->"
+    __GIT_PROMPT_DIR="$PATH_DOTFILES/opt/bash-git-prompt"
+    source "$PATH_DOTFILES/extra/bash-git-prompt/gitprompt.sh"
+fi

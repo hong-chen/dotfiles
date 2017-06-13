@@ -22,6 +22,11 @@ alias vi="vim"
 alias bbash="vim ~/.bashrc"
 alias bashh="source ~/.bashrc"
 
+alias lazygit="git add -A; git commit -m \"daily commit (too lazy to type)\"; git push origin"
+
+alias bbash="vim ~/.bash_profile"
+alias bashh="source ~/.bashrc"
+
 #+ prompt settings
 print_before_the_prompt () {
     printf "%0.s~" $(seq 1 $COLUMNS)

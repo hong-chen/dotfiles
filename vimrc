@@ -225,7 +225,6 @@ call lexima#add_rule({'char': '<CR>', 'at': '^\s*pro\>.*\%#', 'input_after': '<C
 " lexima settings (markdown) [steal from Rintaro]
 call lexima#add_rule({'char': '**', 'input_after': '**', 'filetype': ['markdown']})
 call lexima#add_rule({'char': '<BS>', 'at': '\*\%#\*', 'delete': 1, 'filetype': ['markdown']})
-call lexima#add_rule({'char': '__', 'input_after': '__', 'filetype': ['markdown']})
 call lexima#add_rule({'char': '<BS>', 'at': '_\%#_', 'delete': 1, 'filetype': ['markdown']})
 call lexima#add_rule({'char': '~~', 'input_after': '~~', 'filetype': ['markdown']})
 call lexima#add_rule({'char': '<BS>', 'at': '\~\%#\~', 'delete': 1, 'filetype': ['markdown']})

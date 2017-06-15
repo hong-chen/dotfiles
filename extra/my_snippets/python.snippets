@@ -29,7 +29,7 @@ snippet fig "create figure" b
 fig = plt.figure(figsize=(${1:8}, ${2:6}))
 ax1 = fig.add_subplot(111)
 $0
-# plt.legend(loc='best', fontsize=12, framealpha=0.4)
+# ax1.legend(loc='best', fontsize=12, framealpha=0.4)
 plt.savefig('${6:test}.png')
 plt.show()
 endsnippet

@@ -132,6 +132,10 @@ Plug 'farmergreg/vim-lastplace'
 " preview markdown file
 Plug 'kannokanno/previm', { 'for': 'markdown' }
 
+" markdown syntax highlight
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
 " preview html file
 Plug 'jaxbot/browserlink.vim', { 'for': 'html' }
 
@@ -180,6 +184,10 @@ let python_highlight_all=1
 
 " previm settings
 let g:previm_open_cmd = 'open -a "Google Chrome"'
+
+" vim-markdown settings
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_new_list_item_indent = 2
 
 " easy-align settings
 xmap ga <Plug>(EasyAlign)

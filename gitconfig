@@ -3,7 +3,7 @@
     name = Hong Chen
 [core]
     editor = vim
-    excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore_global
 [color]
     ui = auto
     interactive = auto

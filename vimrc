@@ -231,14 +231,14 @@ call lexima#add_rule({'char': '<CR>', 'at': '^\s*\;\s.*\%#', 'input': '<CR>; ', 
 call lexima#add_rule({'char': '<CR>', 'at': '^\s*pro\>.*\%#', 'input_after': '<CR>end', 'filetype': ['idlang']})
 
 " lexima settings (markdown) [steal from Rintaro]
-call lexima#add_rule({'char': '**', 'input_after': '**', 'filetype': ['markdown']})
-call lexima#add_rule({'char': '<BS>', 'at': '\*\%#\*', 'delete': 1, 'filetype': ['markdown']})
-call lexima#add_rule({'char': '<BS>', 'at': '_\%#_', 'delete': 1, 'filetype': ['markdown']})
-call lexima#add_rule({'char': '~~', 'input_after': '~~', 'filetype': ['markdown']})
-call lexima#add_rule({'char': '<BS>', 'at': '\~\%#\~', 'delete': 1, 'filetype': ['markdown']})
-call lexima#add_rule({'char': '<CR>', 'at': '^\s*\*\s.*\%#', 'input': '<CR>* ', 'filetype': ['markdown']})
-call lexima#add_rule({'char': '<CR>', 'at': '^\s*+\s.*\%#', 'input': '<CR>+ ', 'filetype': ['markdown']})
-call lexima#add_rule({'char': '<CR>', 'at': '^\s*-\s.*\%#', 'input': '<CR>- ', 'filetype': ['markdown']})
+"call lexima#add_rule({'char': '**', 'input_after': '**', 'filetype': ['markdown']})
+"call lexima#add_rule({'char': '<BS>', 'at': '\*\%#\*', 'delete': 1, 'filetype': ['markdown']})
+"call lexima#add_rule({'char': '<BS>', 'at': '_\%#_', 'delete': 1, 'filetype': ['markdown']})
+"call lexima#add_rule({'char': '~~', 'input_after': '~~', 'filetype': ['markdown']})
+"call lexima#add_rule({'char': '<BS>', 'at': '\~\%#\~', 'delete': 1, 'filetype': ['markdown']})
+"call lexima#add_rule({'char': '<CR>', 'at': '^\s*\*\s.*\%#', 'input': '<CR>* ', 'filetype': ['markdown']})
+"call lexima#add_rule({'char': '<CR>', 'at': '^\s*+\s.*\%#', 'input': '<CR>+ ', 'filetype': ['markdown']})
+"call lexima#add_rule({'char': '<CR>', 'at': '^\s*-\s.*\%#', 'input': '<CR>- ', 'filetype': ['markdown']})
 
 " vim-airline settings
 let g:airline_powerline_fonts = 1

@@ -18,6 +18,7 @@ alias gpu="git push -u"
 
 alias py="python -u"
 alias vi="vim"
+#alias vi="pim"
 
 alias bbash="vim ~/.bashrc"
 alias bashh="source ~/.bashrc"

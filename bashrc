@@ -1,3 +1,5 @@
+# by Hong Chen (me@hongchen.cz)
+
 export PATH_DOTFILES="/Users/hoch4240/Chen/mygit/dotfiles"
 
 # alias

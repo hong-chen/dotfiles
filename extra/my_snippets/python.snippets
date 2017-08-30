@@ -64,6 +64,10 @@ def ${1:TEST}():
 	pass
 endsnippet
 
+snippet ifmain "defining main function" b
+if __name__ == '__main__':
+	${1:TEST}()
+endsnippet
 
 # snippet class "class with docstrings" b
 # class ${1:MyClass}(${2:object}):
@@ -121,10 +125,10 @@ snippet #! "Shebang header for python scripts" b
 $0
 endsnippet
 
-snippet ifmain "ifmain" b
-if __name__ == `!p snip.rv = get_quoting_style(snip)`__main__`!p snip.rv = get_quoting_style(snip)`:
-	${1:${VISUAL:main()}}
-endsnippet
+#snippet ifmain "ifmain" b
+#if __name__ == `!p snip.rv = get_quoting_style(snip)`__main__`!p snip.rv = get_quoting_style(snip)`:
+#    ${1:${VISUAL:main()}}
+#endsnippet
 
 snippet with "with" b
 with ${1:expr}`!p snip.rv = " as " if t[2] else ""`${2:var}:

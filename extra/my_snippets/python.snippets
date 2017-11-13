@@ -16,23 +16,27 @@ from scipy.io import readsav
 $0
 endsnippet
 
-snippet ip "import sci-calc libraries" b
+snippet ip "import sci-plot libraries" b
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FixedLocator
+from matplotlib import rcParams
 import cartopy.crs as ccrs
 $0
 endsnippet
 
 snippet fig "create figure" b
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 fig = plt.figure(figsize=(8, 6))
 ax1 = fig.add_subplot(111)
 ax1.$0
 # ax1.set_xlim(())
 # ax1.set_ylim(())
-# ax1.legend(loc='best', fontsize=10, framealpha=0.4)
+# ax1.legend(loc='upper right', fontsize=10, framealpha=0.4)
 # plt.savefig('test.png')
 plt.show()
+exit()
+# ---------------------------------------------------------------------
 endsnippet
 
 snippet map "plot map" b

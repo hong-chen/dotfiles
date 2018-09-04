@@ -31,10 +31,13 @@ snippet fig "create figure" b
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 fig = plt.figure(figsize=(8, 6))
 ax1 = fig.add_subplot(111)
-ax1.$0
+ax1.scatter($0)
 # ax1.set_xlim(())
 # ax1.set_ylim(())
-# ax1.legend(loc='upper right', fontsize=10, framealpha=0.4)
+# ax1.set_xlabel('')
+# ax1.set_ylabel('')
+# ax1.set_title('')
+# ax1.legend(loc='upper right', fontsize=12, framealpha=0.4)
 # plt.savefig('test.png')
 plt.show()
 exit()

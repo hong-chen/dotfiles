@@ -137,7 +137,7 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
 " preview html file
-Plug 'jaxbot/browserlink.vim', { 'for': 'html' }
+"Plug 'jaxbot/browserlink.vim', { 'for': 'html' }
 
 " grammer check
 Plug 'rhysd/vim-grammarous', { 'for': 'markdown' }

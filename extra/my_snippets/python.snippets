@@ -44,6 +44,17 @@ exit()
 # ---------------------------------------------------------------------
 endsnippet
 
+snippet legend "create legend" b
+patches_legend = [
+			mpatches.Patch(color='black' , label='A'),
+			mpatches.Patch(color='red'   , label='B'),
+			mpatches.Patch(color='blue'  , label='C')
+			]
+# ax1.legend(handles=patches_legend, bbox_to_anchor=(0., 1.01, 1., .102), loc=3, ncol=len(patches_legend), mode="expand", borderaxespad=0., frameon=False, handletextpad=0.2, fontsize=16)
+ax1.legend(handles=patches_legend, loc='upper right', fontsize=16)
+$0
+endsnippet
+
 snippet map "plot map" b
 # map settings
 m = Basemap(projection = '${1:cyl}',

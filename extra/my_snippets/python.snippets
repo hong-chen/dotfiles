@@ -18,11 +18,12 @@ endsnippet
 
 snippet ip "import sci-plot libraries" b
 import matplotlib as mpl
+# mpl.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FixedLocator
 from matplotlib import rcParams
 import matplotlib.gridspec as gridspec
-import matplotlib.patches as patches
+import matplotlib.patches as mpatches
 # import cartopy.crs as ccrs
 $0
 endsnippet

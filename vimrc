@@ -148,6 +148,10 @@ Plug 'mattn/emmet-vim'
 " html html5
 Plug 'othree/html5.vim'
 
+" rST riv, InstantRst
+Plug 'Rykka/riv.vim'
+Plug 'Rykka/InstantRst'
+
 " easy-align
 Plug 'junegunn/vim-easy-align'
 
@@ -188,6 +192,9 @@ let g:previm_open_cmd = 'open -a "Google Chrome"'
 " vim-markdown settings
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_new_list_item_indent = 2
+
+" riv.vim settings
+let g:instant_rst_browser = 'chrome'
 
 " easy-align settings
 xmap ga <Plug>(EasyAlign)

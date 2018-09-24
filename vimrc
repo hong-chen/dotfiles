@@ -101,7 +101,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " python fold
-Plug 'Konfekt/FastFold'
+Plug 'Konfekt/FastFold', { 'for': 'python' }
 Plug 'tmhedberg/simpylfold', { 'for': 'python' }
 
 " auto complete (can add more rules)

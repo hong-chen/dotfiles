@@ -195,6 +195,7 @@ let g:vim_markdown_new_list_item_indent = 2
 
 " riv.vim settings
 let g:instant_rst_browser = 'chrome'
+let g:riv_fold_auto_update = 0
 autocmd Filetype rst set nofoldenable
 
 " easy-align settings

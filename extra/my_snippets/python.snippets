@@ -110,7 +110,7 @@ snippet sb "add slurm specifications" b
 #SBATCH --time=04:00:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=hong.chen-1@colorado.edu
-#SBATCH --output=slurm-out_%x-%j.txt
+#SBATCH --output=slurm-out_%x_%j.txt
 #SBATCH --job-name=${1:test}
 
 $0

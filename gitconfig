@@ -1,6 +1,6 @@
 [user]
     email = me@hongchen.cz
-    name = Hong Chen
+    name = hong-chen
 [core]
     editor = vim
     excludesfile = ~/.gitignore_global

@@ -106,7 +106,8 @@ snippet sb "add slurm specifications" b
 
 #SBATCH --partition=shas
 #SBATCH --nodes=1
-#SBATCH --ntasks=16
+#SBATCH --ntasks=24
+#SBATCH --ntasks-per-node=24
 #SBATCH --time=04:00:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=hong.chen-1@colorado.edu

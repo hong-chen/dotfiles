@@ -30,20 +30,19 @@ $0
 endsnippet
 
 snippet fig "create figure" b
-# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# =============================================================================
 fig = plt.figure(figsize=(8, 6))
 ax1 = fig.add_subplot(111)
-ax1.scatter($0)
+ax1.scatter($0, s=6, c='k', lw=0.0)
 # ax1.set_xlim(())
 # ax1.set_ylim(())
 # ax1.set_xlabel('')
 # ax1.set_ylabel('')
 # ax1.set_title('')
-# ax1.legend(loc='upper right', fontsize=12, framealpha=0.4)
-# plt.savefig('test.png')
+# plt.savefig('test.png', bbox_inches='tight')
 plt.show()
 exit()
-# ---------------------------------------------------------------------
+# =============================================================================
 endsnippet
 
 snippet legend "create legend" b
@@ -75,21 +74,22 @@ endsnippet
 snippet mp "multiprocessing" b
 mp_args = zip($1)
 pool = mp.Pool(processes=${2:8})
-pool.outputs = pool.map(${3:TEST}, mp_args)
+pool.outputs = pool.map(${3:test}, mp_args)
 pool.close()
 pool.join()
 $0
 endsnippet
 
 snippet def "defining a function" b
-def ${1:TEST}():
+def ${1:test}():
 	$0
 	pass
 endsnippet
 
 snippet ifmain "defining main function" b
 if __name__ == '__main__':
-	${1:TEST}()
+
+	${1:test}()
 endsnippet
 
 snippet flux "irradiance" b
@@ -98,6 +98,19 @@ endsnippet
 
 snippet wvl "wavelength" b
 'Wavelength [nm]'
+endsnippet
+
+snippet sbatch "add slurm specifications" b
+#!/bin/env python
+
+#SBATCH --partition=shas
+#SBATCH --nodes=1
+#SBATCH --ntasks=16
+#SBATCH --time=04:00:00
+#SBATCH --job-name=${1:test}
+#SBATCH --output=slurm-out_${1:test}-%j.txt
+
+$0
 endsnippet
 
 # snippet class "class with docstrings" b

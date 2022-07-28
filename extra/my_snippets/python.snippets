@@ -34,15 +34,20 @@ snippet fig "create figure" b
 # =============================================================================
 fig = plt.figure(figsize=(8, 6))
 ax1 = fig.add_subplot(111)
-ax1.scatter($0, s=6, c='k', lw=0.0)
+ax1.scatter(x$0, y, s=6, c='k', lw=0.0)
+# ax1.imshow(.T, extent=extent, origin='lower', cmap='jet', zorder=0)
+# ax1.hist(.ravel(), bins=100, histtype='stepfilled', alpha=0.5, color='black')
 # ax1.set_xlim(())
 # ax1.set_ylim(())
 # ax1.set_xlabel('')
 # ax1.set_ylabel('')
 # ax1.set_title('')
-
-# plt.savefig(sys._getframe().f_code.co_name, bbox_inches='tight')
-
+# ax1.xaxis.set_major_locator(FixedLocator(np.arange(0, 100, 5)))
+# ax1.yaxis.set_major_locator(FixedLocator(np.arange(0, 100, 5)))
+#
+# _metadata   = {'Computer': os.uname()[1], 'Script': os.path.abspath(__file__), 'Function':sys._getframe().f_code.co_name}
+# plt.savefig('%s.png' % _metadata['Function'], bbox_inches='tight', metadata=_metadata)
+#
 plt.show()
 exit()
 # =============================================================================

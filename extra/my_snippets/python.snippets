@@ -26,6 +26,8 @@ from matplotlib.ticker import FixedLocator
 from matplotlib import rcParams
 import matplotlib.gridspec as gridspec
 import matplotlib.patches as mpatches
+from PIL import Image
+from PIL.PngImagePlugin import PngInfo
 # import cartopy.crs as ccrs
 $0
 endsnippet
@@ -40,9 +42,27 @@ ax1.scatter($0, s=6, c='k', lw=0.0)
 # ax1.set_xlabel('')
 # ax1.set_ylabel('')
 # ax1.set_title('')
-# plt.savefig('test.png', bbox_inches='tight')
+
+# plt.savefig(sys._getframe().f_code.co_name, bbox_inches='tight')
+
 plt.show()
 exit()
+# =============================================================================
+endsnippet
+
+snippet savefig "save png file" b
+# save png file and add metadata of hostname, script path, and function name
+# =============================================================================
+_uname      = os.uname()[1]
+_fname      = os.path.abspath(__file__)
+_func_name  = sys._getframe().f_code.co_name
+_fname_png  = '%s.png' % _func_name
+_png_info   = png_info = 'Computer: %s\nScript  : %s\nFunction: %s' % (_uname, _fname, _func_name)
+plt.savefig(_fname_png$0, bbox_inches='tight')
+_img = Image.open(_fname_png)
+_metadata = PngInfo()
+_metadata.add_text('myinfo', _png_info)
+_img.save(_fname_png, pnginfo=_metadata)
 # =============================================================================
 endsnippet
 

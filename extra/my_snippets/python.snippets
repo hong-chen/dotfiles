@@ -1,4 +1,4 @@
-# added by Hong Chen
+# added by Hong Chen (hong.chen.cu@gmail.com)
 
 snippet ib "import basic libraries" b
 import os
@@ -33,7 +33,7 @@ endsnippet
 
 snippet fig "create figure" b
 # plot
-#/-----------------------------------------------------------------------------/
+#/----------------------------------------------------------------------------\#
 plt.close('all')
 fig = plt.figure(figsize=(8, 6))
 ax1 = fig.add_subplot(111)
@@ -51,13 +51,13 @@ ax1.scatter(x$0, y, s=6, c='k', lw=0.0)
 # plt.savefig('%s.png' % _metadata['Function'], bbox_inches='tight', metadata=_metadata)
 plt.show()
 sys.exit()
-#\-----------------------------------------------------------------------------\
+#\----------------------------------------------------------------------------/#
 endsnippet
 
 snippet == "create seperation line" b
 # ${0:Comment}
-#/-----------------------------------------------------------------------------/
-#\-----------------------------------------------------------------------------\
+#/----------------------------------------------------------------------------\#
+#\----------------------------------------------------------------------------/#
 endsnippet
 
 snippet savefig "save png file" b
@@ -121,25 +121,23 @@ endsnippet
 
 snippet sb "add slurm specifications" b
 #!/bin/env python
-
 #SBATCH --partition=shas
 #SBATCH --nodes=1
 #SBATCH --ntasks=24
 #SBATCH --ntasks-per-node=24
 #SBATCH --time=04:00:00
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=chenhong.cu@gmail.com
+#SBATCH --mail-user=hong.chen.cu@gmail.com
 #SBATCH --output=sbatch-output_%x_%j.txt
 #SBATCH --job-name=${1:test}
-
 $0
 endsnippet
 
 snippet saveh5 "save file in hdf5 format" b
 f = h5py.File(fname, 'w')
 f['${1:data}'] = $1
-# f['$1'].dims[0].label('x')
-# f['$1'].dims[1].label('y')
+# f['$1'].dims[0].label = 'x'
+# f['$1'].dims[1].label = 'y'
 # f['$1'].attrs['description'] = ''
 # f['$1'].attrs['long_name'] = ''
 # f['$1'].attrs['units'] = ''
@@ -160,8 +158,8 @@ endsnippet
 
 snippet cdset "save dataset" b
 f['${1:data}'] = $1
-# f['$1'].dims[0].label('x')
-# f['$1'].dims[1].label('y')
+# f['$1'].dims[0].label = 'x'
+# f['$1'].dims[1].label = 'y'
 # f['$1'].attrs['description'] = ''
 # f['$1'].attrs['long_name'] = ''
 # f['$1'].attrs['units'] = ''

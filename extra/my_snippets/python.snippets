@@ -19,12 +19,12 @@ endsnippet
 
 snippet ip "import sci-plot libraries" b
 import matplotlib as mpl
-from matplotlib import rcParams
 import matplotlib.pyplot as plt
-from matplotlib.ticker import FixedLocator
-import matplotlib.gridspec as gridspec
-import matplotlib.patches as mpatches
 import matplotlib.image as mpl_img
+import matplotlib.patches as mpatches
+import matplotlib.gridspec as gridspec
+from matplotlib import rcParams, ticker
+from matplotlib.ticker import FixedLocator
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 # import cartopy.crs as ccrs
 # mpl.use('Agg')
@@ -32,13 +32,16 @@ $0
 endsnippet
 
 snippet fig "create figure" b
-# plot
+# figure
 #/----------------------------------------------------------------------------\#
 plt.close('all')
 fig = plt.figure(figsize=(8, 6))
+# fig.suptitle('Figure')
+# plot
+#/----------------------------------------------------------------------------\#
 ax1 = fig.add_subplot(111)
 ax1.scatter(x$0, y, s=6, c='k', lw=0.0)
-# ax1.imshow(.T, extent=extent, origin='lower', cmap='jet', zorder=0)
+# ax1.imshow(.T, origin='lower', cmap='jet', zorder=0) #, extent=extent, vmin=0.0, vmax=0.5)
 # ax1.hist(.ravel(), bins=100, histtype='stepfilled', alpha=0.5, color='black')
 # ax1.set_xlim(())
 # ax1.set_ylim(())
@@ -47,8 +50,19 @@ ax1.scatter(x$0, y, s=6, c='k', lw=0.0)
 # ax1.set_title('')
 # ax1.xaxis.set_major_locator(FixedLocator(np.arange(0, 100, 5)))
 # ax1.yaxis.set_major_locator(FixedLocator(np.arange(0, 100, 5)))
+#\----------------------------------------------------------------------------/#
+# add colorbar
+#/----------------------------------------------------------------------------\#
+# divider = make_axes_locatable(ax1)
+# cax = divider.append_axes('right', '5%', pad='3%')
+# fig.colorbar(cs, cax=cax)
+#\----------------------------------------------------------------------------/#
+# save figure
+#/----------------------------------------------------------------------------\#
 # _metadata = {'Computer': os.uname()[1], 'Script': os.path.abspath(__file__), 'Function':sys._getframe().f_code.co_name, 'Date':datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 # plt.savefig('%s.png' % _metadata['Function'], bbox_inches='tight', metadata=_metadata)
+#/----------------------------------------------------------------------------\#
+# plt.subplots_adjust(hspace=0.3, wspace=0.3)
 plt.show()
 sys.exit()
 #\----------------------------------------------------------------------------/#
@@ -69,10 +83,11 @@ snippet legend "create legend" b
 patches_legend = [
                   mpatches.Patch(color='black' , label='A'), \
                   mpatches.Patch(color='red'   , label='B'), \
-                  mpatches.Patch(color='blue'  , label='C')
+#                  mpatches.Patch(color='green' , label='C'), \
+#                  mpatches.Patch(color='blue'  , label='D'), \
                  ]
-# ax1.legend(handles=patches_legend, bbox_to_anchor=(0., 1.01, 1., .102), loc=3, ncol=len(patches_legend), mode="expand", borderaxespad=0., frameon=False, handletextpad=0.2, fontsize=16)
-ax1.legend(handles=patches_legend, loc='upper right', fontsize=16)
+# ax1.legend(handles=patches_legend, bbox_to_anchor=(0., 1.01, 1., .102), loc=3, ncol=len(patches_legend), mode="expand", borderaxespad=0., frameon=False, handletextpad=0.2, fontsize=14)
+ax1.legend(handles=patches_legend, loc='upper right', fontsize=14)
 $0
 endsnippet
 
@@ -147,7 +162,7 @@ f['${1:data}'] = $1
 f.close()
 endsnippet
 
-snippet cdim2 "create dimension scales" b
+snippet dim2 "create dimension scales" b
 f['${2:x}'] = $2
 f['$2'].make_scale('$2')
 f['${3:y}'] = $3
@@ -156,7 +171,7 @@ f['${1:data}'].dims[0].attach_scale(f['$2'])
 f['$1'].dims[1].attach_scale(f['$3'])
 endsnippet
 
-snippet cdset "save dataset" b
+snippet dset "save dataset" b
 f['${1:data}'] = $1
 # f['$1'].dims[0].label = 'x'
 # f['$1'].dims[1].label = 'y'

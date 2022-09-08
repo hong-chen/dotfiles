@@ -40,8 +40,8 @@ fig = plt.figure(figsize=(8, 6))
 # plot
 #/----------------------------------------------------------------------------\#
 ax1 = fig.add_subplot(111)
-ax1.scatter(x$0, y, s=6, c='k', lw=0.0)
-# ax1.imshow(.T, origin='lower', cmap='jet', zorder=0) #, extent=extent, vmin=0.0, vmax=0.5)
+# cs = ax1.imshow($0.T, origin='lower', cmap='jet', zorder=0) #, extent=extent, vmin=0.0, vmax=0.5)
+# ax1.scatter(x, y, s=6, c='k', lw=0.0)
 # ax1.hist(.ravel(), bins=100, histtype='stepfilled', alpha=0.5, color='black')
 # ax1.set_xlim(())
 # ax1.set_ylim(())
@@ -53,6 +53,7 @@ ax1.scatter(x$0, y, s=6, c='k', lw=0.0)
 #\----------------------------------------------------------------------------/#
 # add colorbar
 #/----------------------------------------------------------------------------\#
+# cs.set_label('', rotation=270)
 # divider = make_axes_locatable(ax1)
 # cax = divider.append_axes('right', '5%', pad='3%')
 # fig.colorbar(cs, cax=cax)
@@ -98,6 +99,7 @@ $0
 endsnippet
 
 snippet cbar "create colorbar" b
+cs.set_label('', rotation=270)
 divider = make_axes_locatable(${0:ax1})
 cax = divider.append_axes('right', '5%', pad='3%')
 fig.colorbar(cs, cax=cax)

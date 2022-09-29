@@ -38,7 +38,7 @@ plt.close('all')
 fig = plt.figure(figsize=(8, 6))
 # fig.suptitle('Figure')
 # plot
-#/----------------------------------------------------------------------------\#
+#/--------------------------------------------------------------\#
 ax1 = fig.add_subplot(111)
 # cs = ax1.imshow($0.T, origin='lower', cmap='jet', zorder=0) #, extent=extent, vmin=0.0, vmax=0.5)
 # ax1.scatter(x, y, s=6, c='k', lw=0.0)
@@ -50,20 +50,20 @@ ax1 = fig.add_subplot(111)
 # ax1.set_title('')
 # ax1.xaxis.set_major_locator(FixedLocator(np.arange(0, 100, 5)))
 # ax1.yaxis.set_major_locator(FixedLocator(np.arange(0, 100, 5)))
-#\----------------------------------------------------------------------------/#
+#\--------------------------------------------------------------/#
 # add colorbar
-#/----------------------------------------------------------------------------\#
+#/--------------------------------------------------------------\#
 # cs.set_label('', rotation=270)
 # divider = make_axes_locatable(ax1)
 # cax = divider.append_axes('right', '5%', pad='3%')
 # fig.colorbar(cs, cax=cax)
-#\----------------------------------------------------------------------------/#
+#\--------------------------------------------------------------/#
 # save figure
-#/----------------------------------------------------------------------------\#
+#/--------------------------------------------------------------\#
+# plt.subplots_adjust(hspace=0.3, wspace=0.3)
 # _metadata = {'Computer': os.uname()[1], 'Script': os.path.abspath(__file__), 'Function':sys._getframe().f_code.co_name, 'Date':datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 # plt.savefig('%s.png' % _metadata['Function'], bbox_inches='tight', metadata=_metadata)
-#/----------------------------------------------------------------------------\#
-# plt.subplots_adjust(hspace=0.3, wspace=0.3)
+#\--------------------------------------------------------------/#
 plt.show()
 sys.exit()
 #\----------------------------------------------------------------------------/#
@@ -79,6 +79,33 @@ snippet === "create seperation line" b
 # ${0:Comment}
 #/----------------------------------------------------------------------------\#
 #\----------------------------------------------------------------------------/#
+endsnippet
+
+snippet hmap "create heatmap" b
+# heatmap
+#/--------------------------------------------------------------\#
+xedge = np.linspace(0.0, 1.0, 51)
+yedge = np.linspace(0.0, 1.0, 51)
+heatmap, xedge, yedge = np.histogram2d(${0:data_x}.ravel(), ${1:data_y}.ravel(), bins=(xedge, yedge))
+extent = [xedge[0], xedge[-1], yedge[0], yedge[-1]]
+x = (xedge[:-1]+xedge[1:])/2.0
+y = (yedge[:-1]+yedge[1:])/2.0
+xx, yy = np.meshgrid(x, y, indexing='ij')
+# levels = np.power(10, np.linspace(0.0, np.log10(heatmap.max()), 101))
+levels = np.linspace(0, heatmap.max(), 101)
+cmap = mpl.cm.get_cmap('jet').copy()
+cmap.set_under('white')
+cs = ax1.contourf(xx, yy, heatmap, levels, extent=extent, extend='both', cmap=cmap, zorder=0)
+ax1.plot(extent[:2], extent[2:], color='gray', ls='--', lw=1.5)
+ax1.set_xlim(extent[:2])
+ax1.set_ylim(extent[2:])
+ax1.set_title('Heatmap')
+# cs.set_label('', rotation=270)
+cs.cmap.set_under('white')
+divider = make_axes_locatable(ax5)
+cax = divider.append_axes('right', '5%', pad='3%')
+fig.colorbar(cs, cax=cax)
+#\--------------------------------------------------------------/#
 endsnippet
 
 snippet savefig "save png file" b

@@ -58,6 +58,7 @@ ax1 = fig.add_subplot(111)
 # cax = divider.append_axes('right', '5%', pad='3%')
 # cbar = fig.colorbar(cs, cax=cax)
 # cbar.set_label('', rotation=270, labelpad=4.0)
+# cax.axis('off')
 #\--------------------------------------------------------------/#
 # save figure
 #/--------------------------------------------------------------\#
@@ -106,6 +107,7 @@ divider = make_axes_locatable(ax1)
 cax = divider.append_axes('right', '5%', pad='3%')
 cbar = fig.colorbar(cs, cax=cax)
 # cbar.set_label('', rotation=270, labelpad=4.0)
+# cax.axis('off')
 #\--------------------------------------------------------------/#
 endsnippet
 
@@ -131,6 +133,7 @@ divider = make_axes_locatable(${0:ax1})
 cax = divider.append_axes('right', '5%', pad='3%')
 cbar = fig.colorbar(cs, cax=cax)
 cbar.set_label('', rotation=270, labelpad=4.0)
+# cax.axis('off')
 endsnippet
 
 snippet mp "multiprocessing" b

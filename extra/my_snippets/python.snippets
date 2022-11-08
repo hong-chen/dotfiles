@@ -54,9 +54,9 @@ ax1 = fig.add_subplot(111)
 #\--------------------------------------------------------------/#
 # add colorbar
 #/--------------------------------------------------------------\#
-# cs.set_label('', rotation=270)
 # divider = make_axes_locatable(ax1)
 # cax = divider.append_axes('right', '5%', pad='3%')
+# cax.set_ylabel('', rotation=270)
 # fig.colorbar(cs, cax=cax)
 #\--------------------------------------------------------------/#
 # save figure
@@ -101,10 +101,10 @@ ax1.plot(extent[:2], extent[2:], color='gray', ls='--', lw=1.5)
 ax1.set_xlim(extent[:2])
 ax1.set_ylim(extent[2:])
 ax1.set_title('Heatmap')
-# cs.set_label('', rotation=270)
 cs.cmap.set_under('white')
-divider = make_axes_locatable(ax5)
+divider = make_axes_locatable(ax1)
 cax = divider.append_axes('right', '5%', pad='3%')
+# cax.set_ylabel('', rotation=270)
 fig.colorbar(cs, cax=cax)
 #\--------------------------------------------------------------/#
 endsnippet
@@ -127,9 +127,9 @@ $0
 endsnippet
 
 snippet cbar "create colorbar" b
-cs.set_label('', rotation=270)
 divider = make_axes_locatable(${0:ax1})
 cax = divider.append_axes('right', '5%', pad='3%')
+cax.set_ylabel('', rotation=270)
 fig.colorbar(cs, cax=cax)
 endsnippet
 

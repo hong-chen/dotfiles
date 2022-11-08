@@ -56,8 +56,8 @@ ax1 = fig.add_subplot(111)
 #/--------------------------------------------------------------\#
 # divider = make_axes_locatable(ax1)
 # cax = divider.append_axes('right', '5%', pad='3%')
-# cax.set_ylabel('', rotation=270)
-# fig.colorbar(cs, cax=cax)
+# cbar = fig.colorbar(cs, cax=cax)
+# cbar.set_label('', rotation=270, labelpad=4.0)
 #\--------------------------------------------------------------/#
 # save figure
 #/--------------------------------------------------------------\#
@@ -104,8 +104,8 @@ ax1.set_title('Heatmap')
 cs.cmap.set_under('white')
 divider = make_axes_locatable(ax1)
 cax = divider.append_axes('right', '5%', pad='3%')
-# cax.set_ylabel('', rotation=270)
-fig.colorbar(cs, cax=cax)
+cbar = fig.colorbar(cs, cax=cax)
+# cbar.set_label('', rotation=270, labelpad=4.0)
 #\--------------------------------------------------------------/#
 endsnippet
 
@@ -129,8 +129,8 @@ endsnippet
 snippet cbar "create colorbar" b
 divider = make_axes_locatable(${0:ax1})
 cax = divider.append_axes('right', '5%', pad='3%')
-cax.set_ylabel('', rotation=270)
-fig.colorbar(cs, cax=cax)
+cbar = fig.colorbar(cs, cax=cax)
+cbar.set_label('', rotation=270, labelpad=4.0)
 endsnippet
 
 snippet mp "multiprocessing" b

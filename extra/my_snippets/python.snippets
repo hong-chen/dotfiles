@@ -57,8 +57,8 @@ ax1 = fig.add_subplot(111)
 # divider = make_axes_locatable(ax1)
 # cax = divider.append_axes('right', '5%', pad='3%')
 # cbar = fig.colorbar(cs, cax=cax)
-# cbar.set_ticks([])
 # cbar.set_label('', rotation=270, labelpad=4.0)
+# cbar.set_ticks([])
 # cax.axis('off')
 #\--------------------------------------------------------------/#
 # save figure
@@ -111,26 +111,26 @@ ax1.set_title('Heatmap')
 divider = make_axes_locatable(ax1)
 cax = divider.append_axes('right', '5%', pad='3%')
 cbar = fig.colorbar(cs, cax=cax)
-# cbar.set_ticks([])
 # cbar.set_label('', rotation=270, labelpad=4.0)
+# cbar.set_ticks([])
 # cax.axis('off')
 #\--------------------------------------------------------------/#
 endsnippet
 
 snippet savefig "save png file" b
-_metadata   = {'Computer': os.uname()[1], 'Script': os.path.abspath(__file__), 'Function':sys._getframe().f_code.co_name, 'Date':datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-plt.savefig('%s.png' % _metadata['Function']$0, bbox_inches='tight', metadata=_metadata)
+_metadata = {'Computer': os.uname()[1], 'Script': os.path.abspath(__file__), 'Function':sys._getframe().f_code.co_name, 'Date':datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+plt.savefig('%s.png' % ($0_metadata['Function']), bbox_inches='tight', metadata=_metadata)
 endsnippet
 
 snippet legend "create legend" b
 patches_legend = [
                   mpatches.Patch(color='black' , label='A'), \
                   mpatches.Patch(color='red'   , label='B'), \
-#                  mpatches.Patch(color='green' , label='C'), \
-#                  mpatches.Patch(color='blue'  , label='D'), \
+#                  mpatches.Patch(color='blue'  , label='C'), \
+#                  mpatches.Patch(color='green' , label='D'), \
                  ]
 # ax1.legend(handles=patches_legend, bbox_to_anchor=(0., 1.01, 1., .102), loc=3, ncol=len(patches_legend), mode="expand", borderaxespad=0., frameon=False, handletextpad=0.2, fontsize=14)
-ax1.legend(handles=patches_legend, loc='upper right', fontsize=14)
+ax1.legend(handles=patches_legend, loc='upper right', fontsize=16)
 $0
 endsnippet
 
@@ -138,8 +138,8 @@ snippet cbar "create colorbar" b
 divider = make_axes_locatable(${0:ax1})
 cax = divider.append_axes('right', '5%', pad='3%')
 cbar = fig.colorbar(cs, cax=cax)
-# cbar.set_ticks([])
 # cbar.set_label('', rotation=270, labelpad=4.0)
+# cbar.set_ticks([])
 # cax.axis('off')
 endsnippet
 

@@ -57,6 +57,7 @@ ax1 = fig.add_subplot(111)
 # divider = make_axes_locatable(ax1)
 # cax = divider.append_axes('right', '5%', pad='3%')
 # cbar = fig.colorbar(cs, cax=cax)
+# cbar.set_ticks([])
 # cbar.set_label('', rotation=270, labelpad=4.0)
 # cax.axis('off')
 #\--------------------------------------------------------------/#
@@ -83,6 +84,11 @@ snippet === "create seperation line" b
 #\----------------------------------------------------------------------------/#
 endsnippet
 
+snippet cmap "create colormap" b
+cmap = mpl.cm.get_cmap('jet').copy()
+cmap.set_under('white')
+endsnippet
+
 snippet hmap "create heatmap" b
 # heatmap
 #/--------------------------------------------------------------\#
@@ -102,10 +108,10 @@ ax1.plot(extent[:2], extent[2:], color='gray', ls='--', lw=1.5)
 ax1.set_xlim(extent[:2])
 ax1.set_ylim(extent[2:])
 ax1.set_title('Heatmap')
-cs.cmap.set_under('white')
 divider = make_axes_locatable(ax1)
 cax = divider.append_axes('right', '5%', pad='3%')
 cbar = fig.colorbar(cs, cax=cax)
+# cbar.set_ticks([])
 # cbar.set_label('', rotation=270, labelpad=4.0)
 # cax.axis('off')
 #\--------------------------------------------------------------/#
@@ -132,7 +138,8 @@ snippet cbar "create colorbar" b
 divider = make_axes_locatable(${0:ax1})
 cax = divider.append_axes('right', '5%', pad='3%')
 cbar = fig.colorbar(cs, cax=cax)
-cbar.set_label('', rotation=270, labelpad=4.0)
+# cbar.set_ticks([])
+# cbar.set_label('', rotation=270, labelpad=4.0)
 # cax.axis('off')
 endsnippet
 

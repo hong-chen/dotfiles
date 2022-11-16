@@ -1,8 +1,8 @@
 " +
 " Author: Hong Chen
-" URL:    http://me.hongchen.cz
+" URL:    https://github.com/hong-chen
 " Source: https://github.com/hong-chen/dotfiles/vimrc
-" Email:  me@hongchen.cz
+" Email:  hong.chen.cu@gmail.com
 " Special thanks to Rintaro Okamura (github.com/rinx)
 " -
 

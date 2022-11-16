@@ -63,9 +63,9 @@ ax1 = fig.add_subplot(111)
 #\--------------------------------------------------------------/#
 # save figure
 #/--------------------------------------------------------------\#
-# plt.subplots_adjust(hspace=0.3, wspace=0.3)
+# fig.subplots_adjust(hspace=0.3, wspace=0.3)
 # _metadata = {'Computer': os.uname()[1], 'Script': os.path.abspath(__file__), 'Function':sys._getframe().f_code.co_name, 'Date':datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-# plt.savefig('%s.png' % _metadata['Function'], bbox_inches='tight', metadata=_metadata)
+# fig.savefig('%s.png' % _metadata['Function'], bbox_inches='tight', metadata=_metadata)
 #\--------------------------------------------------------------/#
 plt.show()
 sys.exit()
@@ -119,7 +119,7 @@ endsnippet
 
 snippet savefig "save png file" b
 _metadata = {'Computer': os.uname()[1], 'Script': os.path.abspath(__file__), 'Function':sys._getframe().f_code.co_name, 'Date':datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-plt.savefig('%s.png' % ($0_metadata['Function']), bbox_inches='tight', metadata=_metadata)
+fig.savefig('%s.png' % ($0_metadata['Function']), bbox_inches='tight', metadata=_metadata)
 endsnippet
 
 snippet legend "create legend" b

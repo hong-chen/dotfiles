@@ -1,6 +1,6 @@
 [user]
     email = hong.chen.cu@gmail.com
-    name = hong-chen
+    name = Hong Chen
 [core]
     editor = vim
     excludesfile = ~/.gitignore_global
@@ -10,7 +10,7 @@
 [github]
     user = hong-chen
 [credential]
-    helper = cache --timeout=86400
+    helper = cache --timeout=259200
 [push]
     default = current
 [mergetool]

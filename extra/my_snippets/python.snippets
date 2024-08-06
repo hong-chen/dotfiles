@@ -34,13 +34,13 @@ endsnippet
 
 snippet fig "create figure" b
 # figure
-# /--------------------------------------------------------------------------\ #
+# ╭──────────────────────────────────────────────────────────────────────────╮ #
 if True:
 	plt.close('all')
 	fig = plt.figure(figsize=(8, 6))
 	# fig.suptitle('Figure')
 	# plot
-	# /------------------------------------------------------------\ #
+	# ╭────────────────────────────────────────────────────────────╮ #
 	ax1 = fig.add_subplot(111)
 	# cs = ax1.imshow($0.T, origin='lower', cmap='jet', zorder=0) #, extent=extent, vmin=0.0, vmax=0.5)
 	# ax1.scatter(x, y, s=6, c='k', lw=0.0)
@@ -53,28 +53,32 @@ if True:
 	# ax1.set_title('')
 	# ax1.xaxis.set_major_locator(FixedLocator(np.arange(0, 100, 5)))
 	# ax1.yaxis.set_major_locator(FixedLocator(np.arange(0, 100, 5)))
-	# \------------------------------------------------------------/ #
+	# ╰────────────────────────────────────────────────────────────╯ #
 	# save figure
-	# /------------------------------------------------------------\ #
+	# ╭────────────────────────────────────────────────────────────╮ #
 	# fig.subplots_adjust(hspace=0.3, wspace=0.3)
-	# _metadata = {'Computer': os.uname()[1], 'Script': os.path.abspath(__file__), 'Function':sys._getframe().f_code.co_name, 'Date':datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-	# fig.savefig('%s.png' % _metadata['Function'], bbox_inches='tight', metadata=_metadata)
-	# \------------------------------------------------------------/ #
+	# _metadata_ = {'Computer': os.uname()[1], 'Script': os.path.abspath(__file__), 'Function':sys._getframe().f_code.co_name, 'Date':datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+	# fig.savefig('%s.png' % _metadata_['Function'], bbox_inches='tight', metadata=_metadata_)
+	# ╰────────────────────────────────────────────────────────────╯ #
 	plt.show()
 	sys.exit()
-# \--------------------------------------------------------------------------/ #
+	plt.close(fig)
+	plt.clf()
+# ╰──────────────────────────────────────────────────────────────────────────╯ #
 endsnippet
 
 snippet == "create seperation line" b
 # ${0:Comment}
-# /------------------------------------------------------------\ #
-# \------------------------------------------------------------/ #
+# ╭────────────────────────────────────────────────────────────╮ #
+	
+# ╰────────────────────────────────────────────────────────────╯ #
 endsnippet
 
 snippet === "create seperation line" b
 # ${0:Comment}
-# /--------------------------------------------------------------------------\ #
-# \--------------------------------------------------------------------------/ #
+# ╭──────────────────────────────────────────────────────────────────────────╮ #
+	
+# ╰──────────────────────────────────────────────────────────────────────────╯ #
 endsnippet
 
 snippet cmap "create colormap" b
@@ -84,7 +88,7 @@ endsnippet
 
 snippet hmap "create heatmap" b
 # heatmap
-# /------------------------------------------------------------\ #
+# ╭────────────────────────────────────────────────────────────╮ #
 xedge = np.linspace(0.0, 1.0, 51)
 yedge = np.linspace(0.0, 1.0, 51)
 heatmap, xedge, yedge = np.histogram2d(${0:data_x}.ravel(), ${1:data_y}.ravel(), bins=(xedge, yedge))
@@ -107,12 +111,12 @@ cbar = fig.colorbar(cs, cax=cax)
 # cbar.set_label('', rotation=270, labelpad=4.0)
 # cbar.set_ticks([])
 # cax.axis('off')
-# \------------------------------------------------------------/ #
+# ╰────────────────────────────────────────────────────────────╯ #
 endsnippet
 
 snippet savefig "save png file" b
-_metadata = {'Computer': os.uname()[1], 'Script': os.path.abspath(__file__), 'Function':sys._getframe().f_code.co_name, 'Date':datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-fig.savefig('%s.png' % ($0_metadata['Function']), bbox_inches='tight', metadata=_metadata)
+_metadata_ = {'Computer': os.uname()[1], 'Script': os.path.abspath(__file__), 'Function':sys._getframe().f_code.co_name, 'Date':datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+fig.savefig('%s.png' % ($0_metadata_['Function']), bbox_inches='tight', metadata=_metadata_)
 endsnippet
 
 snippet legend "create legend" b

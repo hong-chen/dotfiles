@@ -115,6 +115,8 @@ endsnippet
 snippet savefig "save png file" b
 _metadata_ = {'Computer': os.uname()[1], 'Script': os.path.abspath(__file__), 'Function':sys._getframe().f_code.co_name, 'Date':datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 fig.savefig('%s.png' % ($0_metadata_['Function']), bbox_inches='tight', metadata=_metadata_)
+plt.close(fig)
+plt.clf()
 endsnippet
 
 snippet legend "create legend" b

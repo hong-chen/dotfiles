@@ -68,19 +68,19 @@ if True:
 endsnippet
 
 snippet = "create seperation line" b
-# ${0:Comment}
+# ${1:L3 Comment}
 #╭────────────────────────────────────────────────╮#
 #╰────────────────────────────────────────────────╯#
 endsnippet
 
 snippet == "create seperation line" b
-# ${0:Comment}
+# ${1:L2 Comment}
 #╭──────────────────────────────────────────────────────────────╮#
 #╰──────────────────────────────────────────────────────────────╯#
 endsnippet
 
 snippet === "create seperation line" b
-# ${0:Comment}
+# ${1:L1 Comment}
 #╭────────────────────────────────────────────────────────────────────────────╮#
 #╰────────────────────────────────────────────────────────────────────────────╯#
 endsnippet
@@ -165,6 +165,7 @@ snippet ifmain "defining main function" b
 if __name__ == '__main__':
 
     ${1:test}()
+	pass
 endsnippet
 
 snippet rad "radiance" b

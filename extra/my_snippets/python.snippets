@@ -222,13 +222,13 @@ f['$1'].dims[1].attach_scale(f['$3'])
 endsnippet
 
 snippet dset "save dataset" b
-f['${1:data}'] = $1
-# f['$1'].dims[0].label = 'x'
-# f['$1'].dims[1].label = 'y'
-# f['$1'].attrs['description'] = ''
-# f['$1'].attrs['long_name'] = ''
-# f['$1'].attrs['units'] = ''
-# f['$1'].attrs['scale_factor'] = 1.0
-# f['$1'].attrs['add_offset'] = 0.0
-# f['$1'].attrs['_FillValue'] = -999.0
+dset_$1 = f.create_dataset('${1:data}', data=$1, compression='gzip', compression_opts=9, chunks=True)
+# dset_$1.dims[0].label = 'x'
+# dset_$1.dims[1].label = 'y'
+# dset_$1.attrs['description'] = ''
+# dset_$1.attrs['long_name'] = ''
+# dset_$1.attrs['units'] = ''
+# dset_$1.attrs['scale_factor'] = 1.0
+# dset_$1.attrs['add_offset'] = 0.0
+# dset_$1.attrs['_FillValue'] = -999.0
 endsnippet

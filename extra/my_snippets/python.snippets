@@ -5,6 +5,10 @@ import os
 import sys
 import glob
 import datetime
+import copy
+import multiprocessing as mp
+from collections import OrderedDict
+# from tqdm import tqdm
 $0
 endsnippet
 
@@ -35,7 +39,8 @@ endsnippet
 snippet fig "create figure" b
 # figure
 #╭────────────────────────────────────────────────────────────────────────────╮#
-if True:
+plot = True
+if plot:
 	plt.close('all')
 	fig = plt.figure(figsize=(8, 6))
 	# fig.suptitle('Figure')
@@ -43,9 +48,9 @@ if True:
 	#╭──────────────────────────────────────────────────────────────╮#
 	ax1 = fig.add_subplot(111)
 	# cs = ax1.imshow($0.T, origin='lower', cmap='jet', zorder=0) #, extent=extent, vmin=0.0, vmax=0.5)
-	# ax1.scatter(x, y, s=6, c='k', lw=0.0)
-	# ax1.hist(.ravel(), bins=100, histtype='stepfilled', alpha=0.5, color='black')
+	# ax1.scatter(x, y, s=2, c='k', lw=0.0)
 	# ax1.plot([0, 1], [0, 1], color='k', ls='--')
+	# ax1.hist(.ravel(), bins=100, histtype='stepfilled', alpha=0.5, color='black')
 	# ax1.set_xlim(())
 	# ax1.set_ylim(())
 	# ax1.set_xlabel('')

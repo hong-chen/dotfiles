@@ -63,7 +63,7 @@ if plot:
 	#╭──────────────────────────────────────────────────────────────╮#
 	# fig.subplots_adjust(hspace=0.3, wspace=0.3)
 	# _metadata_ = {'Computer': os.uname()[1], 'Script': os.path.abspath(__file__), 'Function':sys._getframe().f_code.co_name, 'Date':datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-	# plt.savefig('%s.png' % _metadata_['Function'], bbox_inches='tight', metadata=_metadata_)
+	# plt.savefig('%s.png' % (_metadata_['Function'],), bbox_inches='tight', metadata=_metadata_)
 	#╰──────────────────────────────────────────────────────────────╯#
 	plt.show()
 	sys.exit()
@@ -203,29 +203,30 @@ snippet sb "add slurm specifications" b
 $0
 endsnippet
 
-snippet saveh5 "save file in hdf5 format" b
-f = h5py.File(fname, 'w')
-dset_$1 = f.create_dataset('${1:data}', data=$1, compression='gzip', compression_opts=9, chunks=True)
-# dset_$1.dims[0].label = 'x'
-# dset_$1.dims[1].label = 'y'
-# dset_$1.attrs['description'] = ''
-# dset_$1.attrs['long_name'] = ''
-# dset_$1.attrs['units'] = ''
-# dset_$1.attrs['scale_factor'] = 1.0
-# dset_$1.attrs['add_offset'] = 0.0
-# dset_$1.attrs['_FillValue'] = -999.0
-f.close()
-endsnippet
-
-snippet dim2 "create dimension scales" b
-f['${2:x}'] = $2
-f['$2'].make_scale('$2')
-f['${3:y}'] = $3
-f['$3'].make_scale('$3')
-f['${1:data}'].dims[0].attach_scale(f['$2'])
-f['$1'].dims[1].attach_scale(f['$3'])
+snippet h5 "save file in hdf5 format" b
+#╭────────────────────────────────────────────────────────────────────────────╮#
+fname = 'data_$1.h5'
+h5f = h5py.File(fname, 'w')
+h5d_$1 = h5f.create_dataset('${1:data}', data=$1, compression='gzip', compression_opts=9, chunks=True)
+# h5f['$1'] = $1
+# h5g = h5f.create_group('g0')
+# h5g['$1'] = $1
+h5f.close()
+#╰────────────────────────────────────────────────────────────────────────────╯#
 endsnippet
 
 snippet dset "save dataset" b
-dset_$1 = f.create_dataset('${1:data}', data=$1, compression='gzip', compression_opts=9, chunks=True)
+h5d_$1 = f.create_dataset('${1:data}', data=$1, compression='gzip', compression_opts=9, chunks=True)
+endsnippet
+
+snippet dsetall "save dataset (adding attributes)" b
+h5d_$1 = f.create_dataset('${1:data}', data=$1, compression='gzip', compression_opts=9, chunks=True)
+# h5d_$1.dims[0].label = 'x'
+# h5d_$1.dims[1].label = 'y'
+# h5d_$1.attrs['description'] = ''
+# h5d_$1.attrs['long_name'] = ''
+# h5d_$1.attrs['units'] = 'N/A'
+# h5d_$1.attrs['scale_factor'] = 1.0
+# h5d_$1.attrs['add_offset'] = 0.0
+# h5d_$1.attrs['_FillValue'] = -999.0
 endsnippet

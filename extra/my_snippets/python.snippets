@@ -44,20 +44,21 @@ if plot:
 	plt.close('all')
 	fig = plt.figure(figsize=(8, 6))
 	# fig.suptitle('Figure')
-	# plot
+	# plot1
 	#╭──────────────────────────────────────────────────────────────╮#
 	ax1 = fig.add_subplot(111)
-	# cs = ax1.imshow($0.T, origin='lower', cmap='jet', zorder=0) #, extent=extent, vmin=0.0, vmax=0.5)
+	# cs = ax1.imshow(${2:data}.T, origin='lower', cmap='jet', zorder=0) #, extent=extent, vmin=0.0, vmax=0.5)${1:
 	# ax1.scatter(x, y, s=2, c='k', lw=0.0)
-	# ax1.plot([0, 1], [0, 1], color='k', ls='--')
+	# ax1.plot([0, 1], [0, 1], color='gray', ls='--')
+	# ax1.axhline(0.0, color='gray', ls='--')
 	# ax1.hist(.ravel(), bins=100, histtype='stepfilled', alpha=0.5, color='black')
-	# ax1.set_xlim(())
-	# ax1.set_ylim(())
-	# ax1.set_xlabel('')
-	# ax1.set_ylabel('')
-	# ax1.set_title('')
+	# ax1.set_xlim((0, 1))
+	# ax1.set_ylim((0, 1))
+	# ax1.set_xlabel('X')
+	# ax1.set_ylabel('Y')
+	# ax1.set_title('Figure')
 	# ax1.xaxis.set_major_locator(FixedLocator(np.arange(0, 100, 5)))
-	# ax1.yaxis.set_major_locator(FixedLocator(np.arange(0, 100, 5)))
+	# ax1.yaxis.set_major_locator(FixedLocator(np.arange(0, 100, 5)))}
 	#╰──────────────────────────────────────────────────────────────╯#
 	# save figure
 	#╭──────────────────────────────────────────────────────────────╮#
@@ -66,9 +67,9 @@ if plot:
 	# plt.savefig('%s.png' % (_metadata_['Function'],), bbox_inches='tight', metadata=_metadata_)
 	#╰──────────────────────────────────────────────────────────────╯#
 	plt.show()
-	sys.exit()
 	plt.close(fig)
 	plt.clf()
+	sys.exit()
 #╰────────────────────────────────────────────────────────────────────────────╯#
 endsnippet
 

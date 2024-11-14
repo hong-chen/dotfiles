@@ -36,6 +36,15 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 $0
 endsnippet
 
+snippet plt "plotting commands" b
+cs = ax1.imshow(${1:data}.T, origin='lower', cmap='jet', zorder=0) #, extent=extent, vmin=0.0, vmax=0.5)
+# ax1.scatter($1_x, $1_y, s=2, c='k', lw=0.0)
+# ax1.plot([0, 1], [0, 1], color='gray', ls='--')
+# ax1.axhline(0.0, color='gray', ls='--')
+# ax1.hist($1.ravel(), bins=100, histtype='stepfilled', alpha=0.5, color='black')
+endsnippet
+
+
 snippet fig "create figure" b
 # figure
 #╭────────────────────────────────────────────────────────────────────────────╮#
@@ -47,18 +56,14 @@ if plot:
 	# plot1
 	#╭──────────────────────────────────────────────────────────────╮#
 	ax1 = fig.add_subplot(111)
-	# cs = ax1.imshow(${1:data}.T, origin='lower', cmap='jet', zorder=0) #, extent=extent, vmin=0.0, vmax=0.5)${2:
-	# ax1.scatter(x, y, s=2, c='k', lw=0.0)
-	# ax1.plot([0, 1], [0, 1], color='gray', ls='--')
-	# ax1.axhline(0.0, color='gray', ls='--')
-	# ax1.hist(.ravel(), bins=100, histtype='stepfilled', alpha=0.5, color='black')
+	# cs = ax1.imshow(${1:data}.T, origin='lower', cmap='jet', zorder=0) #, extent=extent, vmin=0.0, vmax=0.5)
 	# ax1.set_xlim((0, 1))
 	# ax1.set_ylim((0, 1))
 	# ax1.set_xlabel('X')
 	# ax1.set_ylabel('Y')
-	# ax1.set_title('Figure')
+	# ax1.set_title('Plot')
 	# ax1.xaxis.set_major_locator(FixedLocator(np.arange(0, 100, 5)))
-	# ax1.yaxis.set_major_locator(FixedLocator(np.arange(0, 100, 5)))}
+	# ax1.yaxis.set_major_locator(FixedLocator(np.arange(0, 100, 5)))
 	#╰──────────────────────────────────────────────────────────────╯#
 	# save figure
 	#╭──────────────────────────────────────────────────────────────╮#

@@ -37,7 +37,7 @@ $0
 endsnippet
 
 snippet plt "plotting commands" b
-ax1.scatter($1_x, $1_y, s=2, c='k', lw=0.0)
+ax1.scatter(${1:data}_x, $1_y, s=2, c='k', lw=0.0)
 # ax1.plot([0, 1], [0, 1], color='gray', ls='--')
 # ax1.axhline(0.0, color='gray', ls='--')
 # ax1.hist($1.ravel(), bins=100, histtype='stepfilled', alpha=0.5, color='black')
@@ -46,13 +46,13 @@ endsnippet
 snippet ax "axis plot" b
 # plot$1
 #╭──────────────────────────────────────────────────────────────╮#
-ax${1:1} = fig.add_subplot(12$1)
+ax${1:1} = fig.add_subplot($1$1$1)
 cs = ax$1.imshow(data.T, origin='lower', cmap='jet', zorder=0) #, extent=extent, vmin=0.0, vmax=0.5)
 # ax$1.set_xlim((0, 1))
 # ax$1.set_ylim((0, 1))
 # ax$1.set_xlabel('X')
 # ax$1.set_ylabel('Y')
-# ax$1.set_title('Plot')
+# ax$1.set_title('Plot$1')
 # ax$1.xaxis.set_major_locator(FixedLocator(np.arange(0, 100, 5)))
 # ax$1.yaxis.set_major_locator(FixedLocator(np.arange(0, 100, 5)))
 #╰──────────────────────────────────────────────────────────────╯#
@@ -74,7 +74,7 @@ if plot:
 	# ax1.set_ylim((0, 1))
 	# ax1.set_xlabel('X')
 	# ax1.set_ylabel('Y')
-	# ax1.set_title('Plot')
+	# ax1.set_title('Plot1')
 	# ax1.xaxis.set_major_locator(FixedLocator(np.arange(0, 100, 5)))
 	# ax1.yaxis.set_major_locator(FixedLocator(np.arange(0, 100, 5)))
 	#╰──────────────────────────────────────────────────────────────╯#

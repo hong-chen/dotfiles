@@ -226,8 +226,8 @@ endsnippet
 snippet h5 "save file in hdf5 format" b
 # save h5 data
 #╭────────────────────────────────────────────────────────────────────────────╮#
-fname = 'data_$1.h5'
-h5f = h5py.File(fname, 'w')
+fname_h5f = 'data_$1.h5'
+h5f = h5py.File(fname_h5f, 'w')
 h5d_$1 = h5f.create_dataset('${1:data}', data=$1, compression='gzip', compression_opts=9, chunks=True)
 # h5f['$1'] = $1
 # h5g = h5f.create_group('g0')
@@ -237,11 +237,11 @@ h5f.close()
 endsnippet
 
 snippet dset "save dataset" b
-h5d_$1 = f.create_dataset('${1:data}', data=$1, compression='gzip', compression_opts=9, chunks=True)
+h5d_$1 = h5f.create_dataset('${1:data}', data=$1, compression='gzip', compression_opts=9, chunks=True)
 endsnippet
 
 snippet dsetall "save dataset (adding attributes)" b
-h5d_$1 = f.create_dataset('${1:data}', data=$1, compression='gzip', compression_opts=9, chunks=True)
+h5d_$1 = h5f.create_dataset('${1:data}', data=$1, compression='gzip', compression_opts=9, chunks=True)
 # h5d_$1.dims[0].label = 'x'
 # h5d_$1.dims[1].label = 'y'
 # h5d_$1.attrs['description'] = ''

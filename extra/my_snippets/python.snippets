@@ -81,9 +81,10 @@ if plot:
 	#╰──────────────────────────────────────────────────────────────╯#
 	# save figure
 	#╭──────────────────────────────────────────────────────────────╮#
-	# fig.subplots_adjust(hspace=0.3, wspace=0.3)
-	# _metadata_ = {'Computer': os.uname()[1], 'Script': os.path.abspath(__file__), 'Function':sys._getframe().f_code.co_name, 'Date':datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-	# plt.savefig('%s.png' % (_metadata_['Function'],), bbox_inches='tight', metadata=_metadata_)
+	fig.subplots_adjust(hspace=0.35, wspace=0.35)
+	_metadata_ = {'Computer': os.uname()[1], 'Script': os.path.abspath(__file__), 'Function':sys._getframe().f_code.co_name, 'Date':datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}
+	fname_fig = '%s_%s.png' % (_metadata_['Date'], _metadata_['Function'],)
+	plt.savefig(fname_fig, bbox_inches='tight', metadata=_metadata_, transparent=False)
 	#╰──────────────────────────────────────────────────────────────╯#
 	plt.show()
 	sys.exit()
@@ -223,21 +224,34 @@ snippet sb "add slurm specifications" b
 $0
 endsnippet
 
-snippet h5 "save file in hdf5 format" b
-# save h5 data
+snippet h5r "read hdf5 file" b
+# read h5 file
 #╭────────────────────────────────────────────────────────────────────────────╮#
-fname_h5f = 'data_$1.h5'
-h5f = h5py.File(fname_h5f, 'w')
-h5d_$1 = h5f.create_dataset('${1:data}', data=$1, compression='gzip', compression_opts=9, chunks=True)
-# h5f['$1'] = $1
-# h5g = h5f.create_group('g0')
-# h5g['$1'] = $1
+fname = 'data_$1.h5'
+h5f = h5py.File(fname, 'r')
+${1:data} = h5f['$1'][...]
+h5f.close()
+#╰────────────────────────────────────────────────────────────────────────────╯#
+endsnippet
+
+snippet h5w "save file in hdf5 format" b
+# save h5 file
+#╭────────────────────────────────────────────────────────────────────────────╮#
+fname = 'data_$1.h5'
+h5f = h5py.File(fname, 'w')
+if isinstance($1, np.ndarray):
+	h5d_$1 = h5f.create_dataset('${1:data}', data=$1, compression='gzip', compression_opts=9, chunks=True)
+else:
+	h5f['$1'] = $1
 h5f.close()
 #╰────────────────────────────────────────────────────────────────────────────╯#
 endsnippet
 
 snippet dset "save dataset" b
-h5d_$1 = h5f.create_dataset('${1:data}', data=$1, compression='gzip', compression_opts=9, chunks=True)
+if isinstance($1, np.ndarray):
+	h5d_$1 = h5f.create_dataset('${1:data}', data=$1, compression='gzip', compression_opts=9, chunks=True)
+else:
+	h5f['$1'] = $1
 endsnippet
 
 snippet dsetall "save dataset (adding attributes)" b

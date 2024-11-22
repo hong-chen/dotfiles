@@ -121,10 +121,10 @@ snippet hmap "create heatmap" b
 #╭──────────────────────────────────────────────────────────────╮#
 xedge = np.linspace(0.0, 1.0, 51)
 yedge = np.linspace(0.0, 1.0, 51)
-heatmap, xedge, yedge = np.histogram2d(${0:data_x}.ravel(), ${1:data_y}.ravel(), bins=(xedge, yedge))
+heatmap, xedge, yedge = np.histogram2d(${1:data}_x.ravel(), $1_y.ravel(), bins=(xedge, yedge))
 extent = [xedge[0], xedge[-1], yedge[0], yedge[-1]]
-x = (xedge[:-1]+xedge[1:])/2.0
-y = (yedge[:-1]+yedge[1:])/2.0
+x = (xedge[:-1]+xedge[1:]) / 2.0
+y = (yedge[:-1]+yedge[1:]) / 2.0
 xx, yy = np.meshgrid(x, y, indexing='ij')
 # levels = np.power(10, np.linspace(0.0, np.log10(heatmap.max()), 101))
 levels = np.linspace(0, heatmap.max(), 101)

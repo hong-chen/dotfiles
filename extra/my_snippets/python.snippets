@@ -145,8 +145,10 @@ cbar = fig.colorbar(cs, cax=cax)
 endsnippet
 
 snippet savefig "save png file" b
-_metadata_ = {'Computer': os.uname()[1], 'Script': os.path.abspath(__file__), 'Function':sys._getframe().f_code.co_name, 'Date':datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-plt.savefig('%s.png' % ($0_metadata_['Function']), bbox_inches='tight', metadata=_metadata_)
+fig.subplots_adjust(hspace=0.35, wspace=0.35)
+_metadata_ = {'Computer': os.uname()[1], 'Script': os.path.abspath(__file__), 'Function':sys._getframe().f_code.co_name, 'Date':datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}
+fname_fig = '%s_%s.png' % (_metadata_['Date'], _metadata_['Function'],)
+plt.savefig(fname_fig, bbox_inches='tight', metadata=_metadata_, transparent=False)
 plt.close(fig)
 plt.clf()
 endsnippet
